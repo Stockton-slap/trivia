@@ -1,0 +1,27 @@
+{
+    "questions": [
+            {
+               "id": "1",
+               "question": "Which movie is this quote from: ",
+               "quote": "You know how to fight six men, we can teach you how to engage six hundred.",
+               "answers": [{"id": "1", "answer": "Mulan", "isCorrect": false}, {"id": "2", "answer": "The Matrix", "isCorrect": false}, {"id": "3", "answer": "Kill Bill: Vol 1", "isCorrect": false}, {"id": "4", "answer": "Batman Begins", "isCorrect": true}]
+            },
+            {
+               "id": "2",
+               "question": "Which movie is this quote from: ",
+               "quote": "Look at the stars. The great kings of the past look down on us from those stars.",
+               "answers": [{"id": "1", "answer": "Stardust", "isCorrect": false}, {"id": "2", "answer": "Prometheus", "isCorrect": false}, {"id": "3", "answer": "August Rush", "isCorrect": false}, {"id": "4", "answer": "The Lion King", "isCorrect": true}]
+            },
+            {
+               "id": "3",
+               "question": "Which movie is this quote from: ",
+               "quote": "Get busy living, or get busy dying.",
+               "answers": [{"id": "1", "answer": "Apocalypse Now", "isCorrect": false}, {"id": "2", "answer": "Forrest Gump", "isCorrect": false}, {"id": "3", "answer": "Full Metal Jacket", "isCorrect": false}, {"id": "4", "answer": "Shawshank Redemption", "isCorrect": true}]
+            },
+            {
+               "id": "4",
+               "question": "Which movie is this quote from: ",
+               "quote": "To infinity and beyond!",
+               "answers": [{"id": "1", "answer": "Apollo 13", "isCorrect": false}, {"id": "2", "answer": "The Martian", "isCorrect": false}, {"id": "3", "answer": "Ad Astra", "isCorrect": false}, {"id": "4", "answer": "Toy Story", "isCorrect": true}]           }
+         ]
+    }
