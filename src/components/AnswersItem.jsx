@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 const variantLetters = {
   1: "A",
@@ -7,24 +7,16 @@ const variantLetters = {
   4: "D",
 };
 
-export default function AnswersItem({ answerItem, handleNextQuestion }) {
-  const [isSelected, setIsSelected] = useState(false);
-
+export default function AnswersItem({
+  answerItem,
+  onAnswerClick,
+  getItemColor,
+}) {
   const { id, answer, isCorrect } = answerItem;
 
-  const handleAnswerClick = () => {
-    setTimeout(() => {
-      handleNextQuestion();
-    }, 500);
-    setIsSelected(true);
-  };
-
   return (
-    <li
-      className={`btn justify-start ${isSelected ? "" : ""}`}
-      onClick={handleAnswerClick}
-    >
-      <button className={`flex items-center gap-[20px] `}>
+    <li className={`btn justify-start ${getItemColor}`} onClick={onAnswerClick}>
+      <button className="flex items-center gap-[32px]">
         <div className="bg-[purple] w-[50px] h-[50px] rounded-[10px] flex items-center justify-center text-white">
           {variantLetters[id]}
         </div>

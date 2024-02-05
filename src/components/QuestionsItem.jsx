@@ -6,7 +6,7 @@ export default function QuestionsItem({ handleNextQuestion, currentQuestion }) {
 
   return (
     <>
-      <li>
+      <li className="flex flex-col justify-center items-center">
         <h2>{question}</h2>
         <p>{quote}</p>
 
