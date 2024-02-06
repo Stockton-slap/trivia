@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import QuestionsItem from "./QuestionsItem";
-import Result from "./Result";
+import ResultList from "./ResultList";
 
 export default function QuestionsList({ questions }) {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [score, setScore] = useState(0);
+  const [userAnswers, setUserAnswers] = useState([]);
 
   const handleNextQuestion = () => {
     setCurrentQuestionIndex((prevIndex) => prevIndex + 1);
@@ -19,9 +20,15 @@ export default function QuestionsList({ questions }) {
           currentQuestion={questions[currentQuestionIndex]}
           questions={questions}
           setScore={setScore}
+          setUserAnswers={setUserAnswers}
+          userAnswers={userAnswers}
         />
       ) : (
-        <Result score={score} questions={questions} />
+        <ResultList
+          score={score}
+          questions={questions}
+          userAnswers={userAnswers}
+        />
       )}
     </ul>
   );

@@ -7,6 +7,8 @@ export default function QuestionsItem({
   currentQuestion,
   questions,
   setScore,
+  setUserAnswers,
+  userAnswers,
 }) {
   const { id, question, quote, answers } = currentQuestion;
 
@@ -22,6 +24,8 @@ export default function QuestionsItem({
         answers={answers}
         handleNextQuestion={handleNextQuestion}
         setScore={setScore}
+        setUserAnswers={setUserAnswers}
+        userAnswers={userAnswers}
       />
     </li>
   );

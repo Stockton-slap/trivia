@@ -2,10 +2,16 @@ import React, { useMemo, useState } from "react";
 import AnswersItem from "./AnswersItem";
 import shuffledArray from "../utils/fisherYatesShuffle";
 
-export default function AnswersList({ answers, handleNextQuestion, setScore }) {
+export default function AnswersList({
+  answers,
+  handleNextQuestion,
+  setScore,
+  setUserAnswers,
+  userAnswers,
+}) {
   const [selectedAnswerId, setSelectedAnswerId] = useState(null);
 
-  const handleAnswerClick = (id, isCorrect) => {
+  const handleAnswerClick = (id, answer, isCorrect) => {
     setSelectedAnswerId(id);
     setTimeout(() => {
       handleNextQuestion();
@@ -18,6 +24,8 @@ export default function AnswersList({ answers, handleNextQuestion, setScore }) {
         return prevScore;
       }
     });
+
+    setUserAnswers([...userAnswers, { id, answer, isCorrect }]);
   };
 
   const getItemColor = (answerId) => {
@@ -33,13 +41,14 @@ export default function AnswersList({ answers, handleNextQuestion, setScore }) {
 
   return (
     <ul className="grid grid-cols-2 gap-8 justify-items-center items-center mt-[32px]">
-      {memoizedShuffledAnswers.map((answer) => (
+      {memoizedShuffledAnswers.map(({ id, answer, isCorrect }, index) => (
         <AnswersItem
-          answerItem={answer}
-          key={answer.id}
+          answer={answer}
+          key={id}
           handleNextQuestion={handleNextQuestion}
-          onAnswerClick={() => handleAnswerClick(answer.id, answer.isCorrect)}
-          getItemColor={getItemColor(answer.id)}
+          onAnswerClick={() => handleAnswerClick(id, answer, isCorrect)}
+          getItemColor={getItemColor(id)}
+          index={index}
         />
       ))}
     </ul>

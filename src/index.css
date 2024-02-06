@@ -13,3 +13,16 @@
     @apply flex items-center justify-center flex-col;
   }
 }
+
+@keyframes floatTextSide {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.hover\:animate-floatTextSide:hover {
+  animation: floatTextSide 10s linear;
+}
