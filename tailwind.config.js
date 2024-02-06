@@ -12,7 +12,9 @@ module.exports = {
       black: "#000",
       header: "#234",
       bg: "grey",
-      btn: "orange",
+      orange: "orange",
+      green: "green",
+      blue: "blue",
       // purple: "purple",
     },
     fontSize: {
