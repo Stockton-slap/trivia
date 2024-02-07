@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function QuizCard() {
+export default function QuestionHeader() {
   return (
     <section className="bg-header rounded-[10px]">
       <div className="flex-center text-white p-[40px]">

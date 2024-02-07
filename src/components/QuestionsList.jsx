@@ -11,6 +11,7 @@ export default function QuestionsList({ questions }) {
     setCurrentQuestionIndex((prevIndex) => prevIndex + 1);
   };
 
+  console.log(questions);
   return (
     <ul className="mt-[40px] p-[60px] rounded-[10px] bg-white">
       {currentQuestionIndex < questions.length ? (
