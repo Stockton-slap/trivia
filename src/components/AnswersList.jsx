@@ -10,21 +10,22 @@ export default function AnswersList({
   userAnswers,
 }) {
   const [selectedAnswerId, setSelectedAnswerId] = useState(null);
+  const [isClickDisabled, setIsClickDisabled] = useState(false);
 
   const handleAnswerClick = (id, answer, isCorrect) => {
+    if (isClickDisabled) {
+      return;
+    }
+
     setSelectedAnswerId(id);
+    setIsClickDisabled(true);
+
     setTimeout(() => {
       handleNextQuestion();
+      setIsClickDisabled(false);
     }, 500);
 
-    setScore((prevScore) => {
-      if (isCorrect) {
-        return prevScore + 1;
-      } else {
-        return prevScore;
-      }
-    });
-
+    setScore((prevScore) => (isCorrect ? prevScore + 1 : prevScore));
     setUserAnswers([...userAnswers, { id, answer, isCorrect }]);
   };
 

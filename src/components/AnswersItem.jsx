@@ -10,6 +10,9 @@ export default function AnswersItem({
 }) {
   const letter = variantLetters[index];
 
+  //   const displayAnswer =
+  //     answer.length > 20 ? `${answer.slice(0, 20)}...` : answer;
+
   return (
     <li className={`btn justify-start ${getItemColor}`} onClick={onAnswerClick}>
       <button
@@ -19,9 +22,7 @@ export default function AnswersItem({
         <div className="bg-[purple] px-[24px] py-[16px] rounded-[10px] flex items-center justify-center text-white text-sm">
           {letter}
         </div>
-        <p className="text-white font-semibold content h-full w-100 bg-yellow-300 whitespace-nowrap hover:animate-floatTextSide">
-          {answer}
-        </p>
+        <p className="text-white font-semibold">{answer}</p>
       </button>
     </li>
   );

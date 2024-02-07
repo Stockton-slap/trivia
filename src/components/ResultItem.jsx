@@ -10,7 +10,7 @@ export default function ResultItem({
 }) {
   const notFirstItem = index !== 0;
   const userAnswer = userAnswers[index].answer;
-  const correctAnswer = answers.find((item) => item.isCorrect).answer;
+  const correctAnswer = answers.find(({ isCorrect }) => isCorrect).answer;
   const matchedAnswers = userAnswer === correctAnswer;
 
   return (
