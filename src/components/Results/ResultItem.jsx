@@ -1,5 +1,5 @@
 import React from "react";
-import QuestionHeadline from "./QuestionHeadline";
+import QuestionHeadline from "../Questions/QuestionHeadline";
 
 export default function ResultItem({
   question,

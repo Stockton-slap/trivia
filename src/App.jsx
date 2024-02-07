@@ -1,16 +1,22 @@
+import React, { lazy, Suspense } from "react";
 import "./index.css";
-import QuizList from "./components/QuizList";
 import { Route, Routes } from "react-router-dom";
-import Home from "./components/Home";
-import QuestionCard from "./components/QuestionCard";
+
+const HomePage = lazy(() => import("./pages/HomePage"));
+const QuizPage = lazy(() => import("./pages/QuizPage"));
+const QuestionPage = lazy(() => import("./pages/QuestionPage"));
+const NotFoundPage = lazy(() => import("./pages/NotFoundPage"));
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/quiz" element={<QuizList />} />
-      <Route path="/quiz/:roundId" element={<QuestionCard />} />
-    </Routes>
+    <Suspense fallback={<div>Loading...</div>}>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/quiz" element={<QuizPage />} />
+        <Route path="/quiz/:roundId" element={<QuestionPage />} />
+        <Route path="*" element={<NotFoundPage />} />
+      </Routes>
+    </Suspense>
   );
 }
 

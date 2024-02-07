@@ -6,7 +6,7 @@ import { useParams } from "react-router-dom";
 export default function QuestionCard() {
   const [questions, setQuestions] = useState(null);
   const { roundId } = useParams();
-  console.log(roundId);
+  //   console.log(roundId);
 
   useEffect(() => {
     const fetchData = async () => {

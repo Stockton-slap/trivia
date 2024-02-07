@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from "react";
 import AnswersItem from "./AnswersItem";
-import shuffledArray from "../utils/fisherYatesShuffle";
+import shuffledArray from "../../utils/shuffledArray";
 
 export default function AnswersList({
   answers,

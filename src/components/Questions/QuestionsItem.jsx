@@ -1,5 +1,5 @@
 import React from "react";
-import AnswersList from "./AnswersList";
+import AnswersList from "../Answers/AnswersList";
 import QuestionHeadline from "./QuestionHeadline";
 
 export default function QuestionsItem({

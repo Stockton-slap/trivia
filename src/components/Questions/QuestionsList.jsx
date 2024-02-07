@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import QuestionsItem from "./QuestionsItem";
-import ResultList from "./ResultList";
+import ResultList from "../Results/ResultList";
 
 export default function QuestionsList({ questions }) {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
