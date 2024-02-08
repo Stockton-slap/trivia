@@ -6,7 +6,6 @@ import { useParams } from "react-router-dom";
 export default function QuestionCard() {
   const [questions, setQuestions] = useState(null);
   const { roundId } = useParams();
-  //   console.log(roundId);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -14,14 +13,14 @@ export default function QuestionCard() {
         const response = await fetch("/questions.json");
         const data = await response.json();
 
-        setQuestions(data.questions);
+        setQuestions(data.rounds[roundId - 1].questions);
       } catch (error) {
         console.error("Error fetching JSON data:", error);
       }
     };
 
     fetchData();
-  }, []);
+  }, [roundId]);
 
   if (questions === null) {
     return <div>Loading...</div>;

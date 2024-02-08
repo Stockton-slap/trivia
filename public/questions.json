@@ -8,31 +8,71 @@
                "id": "1",
                "question": "Which movie is this quote from: ",
                "quote": "You know how to fight six men, we can teach you how to engage six hundred.",
-               "answers": [{"id": "1", "answer": "Mulan", "isCorrect": false}, {"id": "2", "answer": "The Matrix", "isCorrect": false}, {"id": "3", "answer": "Kill Bill: Vol 1", "isCorrect": false}, {"id": "4", "answer": "Batman Begins", "isCorrect": true}]
+               "answers": [{"id": "1", "answer": "Mulan", "isCorrect": false}, {"id": "2", "answer": "The Matrix", "isCorrect": false}, {"id": "3", "answer": "Kill Bill: Vol 1", "isCorrect": false}, {"id": "4", "answer": "Batman Begins", "isCorrect": true}],
+               "type": "options"
             },
             {
                "id": "2",
                "question": "Which movie is this quote from: ",
                "quote": "Look at the stars. The great kings of the past look down on us from those stars.",
-               "answers": [{"id": "1", "answer": "Stardust", "isCorrect": false}, {"id": "2", "answer": "Prometheus", "isCorrect": false}, {"id": "3", "answer": "August Rush", "isCorrect": false}, {"id": "4", "answer": "The Lion King", "isCorrect": true}]
+               "answers": [{"id": "1", "answer": "Stardust", "isCorrect": false}, {"id": "2", "answer": "Prometheus", "isCorrect": false}, {"id": "3", "answer": "August Rush", "isCorrect": false}, {"id": "4", "answer": "The Lion King", "isCorrect": true}],
+               "type": "options"
             },
             {
                "id": "3",
                "question": "Which movie is this quote from: ",
                "quote": "Get busy living, or get busy dying.",
-               "answers": [{"id": "1", "answer": "Apocalypse Now", "isCorrect": false}, {"id": "2", "answer": "Forrest Gump", "isCorrect": false}, {"id": "3", "answer": "Full Metal Jacket", "isCorrect": false}, {"id": "4", "answer": "Shawshank Redemption", "isCorrect": true}]
+               "answers": [{"id": "1", "answer": "Apocalypse Now", "isCorrect": false}, {"id": "2", "answer": "Forrest Gump", "isCorrect": false}, {"id": "3", "answer": "Full Metal Jacket", "isCorrect": false}, {"id": "4", "answer": "Shawshank Redemption", "isCorrect": true}],
+               "type": "options"
             },
             {
                "id": "4",
                "question": "Which movie is this quote from: ",
                "quote": "To infinity and beyond!",
-               "answers": [{"id": "1", "answer": "Apollo 13", "isCorrect": false}, {"id": "2", "answer": "The Martian", "isCorrect": false}, {"id": "3", "answer": "Ad Astra", "isCorrect": false}, {"id": "4", "answer": "Toy Story", "isCorrect": true}]           
+               "answers": [{"id": "1", "answer": "Apollo 13", "isCorrect": false}, {"id": "2", "answer": "The Martian", "isCorrect": false}, {"id": "3", "answer": "Ad Astra", "isCorrect": false}, {"id": "4", "answer": "Toy Story", "isCorrect": true}]    ,
+               "type": "options"       
             },
-              {
+            {
                "id": "5",
                "question": "Which movie is this quote from: ",
                "quote": "Carpe diem. Seize the day, boys. Make your lives extraordinary.",
-               "answers": [{"id": "1", "answer": "A Beautiful Mind", "isCorrect": false}, {"id": "2", "answer": "The Social Network", "isCorrect": false}, {"id": "3", "answer": "21", "isCorrect": false}, {"id": "4", "answer": "Dead Poets Society", "isCorrect": true}]
+               "answers": [{"id": "1", "answer": "A Beautiful Mind", "isCorrect": false}, {"id": "2", "answer": "The Social Network", "isCorrect": false}, {"id": "3", "answer": "21", "isCorrect": false}, {"id": "4", "answer": "Dead Poets Society", "isCorrect": true}],
+               "type": "options"
+            },
+              {
+               "id": "6",
+               "question": "Fill in the missing word from the quote from the movie \"Forrest Gump\" ",
+               "quote": "Life is like a box of {missingWord}. You never know what you've gonna get.",
+               "answer": ["chocolate", "chocolates"],
+               "type": "input"
+            },
+              {
+               "id": "7",
+               "question": "Fill in the missing word from the quote from the cartoon: \"Aladdin\"",
+               "quote": "Character I: \"It's all so magical.\" \nCharacter II:  \"Yeah\" \nCharacter I: \"It's a shame Abou had to miss this.\" \n\"Nah, he hates fireworks. He doesn't really like {missingWord} either.\"",
+               "answer": ["flying", "to fly"],
+               "type": "input"
+            },
+              {
+               "id": "8",
+               "question": "Fill in the missing word from the quote from the movie: \"Gentlemen\"",
+               "quote": "Give me the {missingWord} and take the money.",
+               "answer": ["telephone", "phone"],
+               "type": "input"
+            },
+              {
+               "id": "9",
+               "question": "Fill in the missing word from the quote from the movie: \"Schindler's List\"",
+               "quote": "Character I: \"By law I have to tell you, sir... I'm a Jew.\" \nCharacter II: \"Well, I'm a {missingWord}. So there we are.\"",
+               "answer": ["german"],
+               "type": "input"
+            },
+              {
+               "id": "10",
+               "question": "Fill in the missing word from the quote from the movie: \"Django Unchained\"",
+               "quote": "I like the way you {missingWord}, boy.",
+               "answer": ["die"],
+               "type": "input"
             }
          ]
       },  
