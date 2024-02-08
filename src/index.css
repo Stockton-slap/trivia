@@ -6,7 +6,7 @@
 
 @layer components {
   .btn {
-    @apply w-[400px] flex items-center justify-center cursor-pointer bg-orange rounded-[100px] py-[17px] px-[55px];
+    @apply w-[400px] flex items-center justify-center cursor-pointer bg-orange rounded-[100px] py-[17px] px-[55px] text-white;
   }
 
   .flex-center {

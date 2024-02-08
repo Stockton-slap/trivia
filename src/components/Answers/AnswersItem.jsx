@@ -19,10 +19,10 @@ export default function AnswersItem({
         type="button"
         className="flex items-center gap-[32px] overflow-hidden"
       >
-        <div className="bg-[purple] px-[24px] py-[16px] rounded-[10px] flex items-center justify-center text-white text-sm">
+        <div className="bg-[purple] px-[24px] py-[16px] rounded-[10px] flex items-center justify-center  text-sm">
           {letter}
         </div>
-        <p className="text-white font-semibold">{answer}</p>
+        <p className="font-semibold">{answer}</p>
       </button>
     </li>
   );
