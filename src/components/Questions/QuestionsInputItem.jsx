@@ -1,5 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
+import { ToastContainer } from "react-toastify";
 import QuestionHeadline from "./QuestionHeadline";
+import "react-toastify/dist/ReactToastify.css";
+import notifyToast from "../../utils/notifyToast";
 
 export default function QuestionsInputItem({
   questionItem,
@@ -9,14 +12,14 @@ export default function QuestionsInputItem({
   setScore,
 }) {
   const [inputValue, setInputValue] = useState("");
-
   const ref = useRef();
 
   useEffect(() => {
     ref.current.focus();
   }, []);
 
-  const { question, quote, answer } = questionItem;
+  const { question, quote, answer, id } = questionItem;
+  const splitQuote = quote.split("\n");
 
   const handleAnswerChange = (e) => {
     setInputValue(e.target.value);
@@ -24,25 +27,30 @@ export default function QuestionsInputItem({
 
   const handleAnswerSubmit = (e) => {
     e.preventDefault();
-    const trimmedValue = inputValue.trim();
-    const isAnswerCorrect = answer.includes(trimmedValue);
+    const trimmedValue = inputValue.trim().toLowerCase();
 
-    if (isAnswerCorrect) {
-      setUserAnswers([...userAnswers, { trimmedValue, isCorrect: true }]);
-    } else {
-      setUserAnswers([...userAnswers, { trimmedValue, isCorrect: false }]);
+    if (trimmedValue === "") {
+      notifyToast();
+      return;
     }
+
+    const lowerCaseAnswers = answer.map((item) => item.toLowerCase());
+
+    const isAnswerCorrect = lowerCaseAnswers.includes(trimmedValue);
+
+    setUserAnswers([
+      ...userAnswers,
+      { id, answer: trimmedValue, isCorrect: isAnswerCorrect },
+    ]);
 
     setScore((prevScore) => (isAnswerCorrect ? prevScore + 1 : prevScore));
 
-    if (trimmedValue !== "") {
-      handleNextQuestion();
-    }
+    handleNextQuestion();
   };
 
   return (
     <li className="flex-center">
-      <QuestionHeadline question={question} quote={quote} />
+      <QuestionHeadline question={question} quote={splitQuote} />
       <form onSubmit={handleAnswerSubmit} className="flex-center gap-[20px]">
         <input
           type="text"
@@ -55,6 +63,7 @@ export default function QuestionsInputItem({
           Submit
         </button>
       </form>
+      <ToastContainer />
     </li>
   );
 }

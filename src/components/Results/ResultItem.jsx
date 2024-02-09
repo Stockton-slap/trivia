@@ -7,11 +7,27 @@ export default function ResultItem({
   index,
   answers,
   userAnswers,
+  type,
+  answer,
 }) {
   const notFirstItem = index !== 0;
   const userAnswer = userAnswers[index].answer;
-  const correctAnswer = answers.find(({ isCorrect }) => isCorrect).answer;
-  const matchedAnswers = userAnswer === correctAnswer;
+  const isAnswerCorrect = () => {
+    switch (type) {
+      case "options":
+        return answers.find(({ isCorrect }) => isCorrect).answer;
+      case "input":
+        return answer[0];
+
+      default:
+    }
+  };
+  const matchedAnswers = userAnswer === isAnswerCorrect();
+
+  const renderedQuote =
+    type === "input"
+      ? quote.replace("....", isAnswerCorrect())
+      : isAnswerCorrect();
 
   return (
     <li className={`w-[600px] ${notFirstItem && "mt-[40px]"}`}>
@@ -22,7 +38,7 @@ export default function ResultItem({
       />
       <QuestionHeadline question={question} quote={quote} />
       <p className="mt-[10px] text-orange">Your answer: {userAnswer}</p>
-      <p className="mt-[10px] text-green">Correct answer: {correctAnswer}</p>
+      <p className="mt-[10px] text-green">Correct answer: {renderedQuote}</p>
     </li>
   );
 }
