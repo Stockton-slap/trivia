@@ -42,7 +42,7 @@
               {
                "id": "6",
                "question": "Fill in the missing word from the quote from the movie \"Forrest Gump\"",
-               "quote": "Life is like a box of .... . You never know what you've gonna get.",
+               "quote": "Life is like a box of ..... You never know what you've gonna get.",
                "answer": ["chocolate", "chocolates"],
                "type": "input"
             },
@@ -57,14 +57,14 @@
                "id": "8",
                "question": "Fill in the missing word from the quote from the movie: \"Gentlemen\"",
                "quote": "Give me the .... and take the money.",
-               "answer": ["telephone", "phone"],
+               "answer": ["phone", "telephone"],
                "type": "input"
             },
               {
                "id": "9",
                "question": "Fill in the missing word from the quote from the movie: \"Schindler's List\"",
                "quote": "Character I: \"By law I have to tell you, sir... I'm a Jew.\" \nCharacter II: \"Well, I'm a .... So there we are.\"",
-               "answer": ["german"],
+               "answer": ["German"],
                "type": "input"
             },
               {

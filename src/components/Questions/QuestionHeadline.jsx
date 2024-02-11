@@ -6,18 +6,31 @@ export default function QuestionHeadline({ question, quote }) {
       return <p className="mt-[10px] font-semibold italic">"{quote}"</p>;
     } else {
       return (
-        <ul className="flex-center items-start">
+        <ul className="flex-center items-start mt-[20px]">
           {quote.map((item, index) => {
-            const isCharacter = item.substring("Character");
+            const isCharacterI = item.startsWith("Character I:");
+            const isCharacterII = item.startsWith("Character II:");
 
-            return (
-              <li
-                key={index}
-                className={isCharacter ? "font-semibold" : "italic"}
-              >
-                {item}
-              </li>
-            );
+            if (isCharacterI || isCharacterII) {
+              const [character, dialogue] = item.split(":");
+
+              return (
+                <li key={index}>
+                  <span
+                    className={
+                      isCharacterI || isCharacterII
+                        ? "font-bold underline"
+                        : "font-italic"
+                    }
+                  >
+                    {`${character}:`}
+                  </span>
+                  {dialogue}
+                </li>
+              );
+            } else {
+              return <li key={index}>{item}</li>;
+            }
           })}
         </ul>
       );

@@ -17,11 +17,14 @@ export default function ResultItem({
       case "options":
         return answers.find(({ isCorrect }) => isCorrect).answer;
       case "input":
+        answer.filter((a) => console.log(a));
+
         return answer[0];
 
       default:
     }
   };
+
   const matchedAnswers = userAnswer === isAnswerCorrect();
 
   const renderedQuote =
