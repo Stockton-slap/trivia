@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 import QuestionHeadline from "../Questions/QuestionHeadline";
 
 export default function ResultItem({
@@ -12,31 +12,31 @@ export default function ResultItem({
 }) {
   const notFirstItem = index !== 0;
   const userAnswer = userAnswers[index].answer;
-  const isAnswerCorrect = () => {
+
+  const isAnswerCorrect = useMemo(() => {
     switch (type) {
       case "options":
-        return answers.find(({ isCorrect }) => isCorrect).answer;
+        return answers.find(({ isCorrect }) => isCorrect).answer === userAnswer;
       case "input":
-        answer.filter((a) => console.log(a));
-
-        return answer[0];
-
+        return (
+          answer.find(
+            (item) => item.toLowerCase() === userAnswer.toLowerCase()
+          ) !== undefined
+        );
       default:
     }
-  };
-
-  const matchedAnswers = userAnswer === isAnswerCorrect();
+  }, [answer, answers, type, userAnswer]);
 
   const renderedQuote =
     type === "input"
-      ? quote.replace("....", isAnswerCorrect())
-      : isAnswerCorrect();
+      ? quote.replace("....", answer[0])
+      : answers.find(({ isCorrect }) => isCorrect).answer;
 
   return (
     <li className={`w-[600px] ${notFirstItem && "mt-[40px]"}`}>
       <div
         className={`w-full h-[40px] ${
-          matchedAnswers ? "bg-[green]" : "bg-[red]"
+          isAnswerCorrect ? "bg-[green]" : "bg-[red]"
         } bg-[#ab2626]`}
       />
       <QuestionHeadline question={question} quote={quote} />
