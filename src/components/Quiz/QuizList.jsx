@@ -24,8 +24,8 @@ export default function QuizList() {
   }
 
   return (
-    <div className="m-[40px] bg-bg rounded-[20px]">
-      <ul className="p-[40px] flex flex-wrap gap-[20px]">
+    <div className="m-[32px] bg-blue rounded-[20px]">
+      <ul className="p-[40px] flex flex-wrap gap-[20px] justify-center">
         {rounds.map(({ id, title }) => (
           <QuizItem key={id} title={title} id={id} />
         ))}

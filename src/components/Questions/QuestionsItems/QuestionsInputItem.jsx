@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import { ToastContainer } from "react-toastify";
-import QuestionHeadline from "./QuestionHeadline";
+import QuestionHeadline from "../QuestionHeadline/QuestionHeadline";
 import "react-toastify/dist/ReactToastify.css";
-import notifyToast from "../../utils/notifyToast";
+import notifyToast from "../../../utils/notifyToast";
 
 export default function QuestionsInputItem({
   questionItem,
@@ -18,8 +18,7 @@ export default function QuestionsInputItem({
     ref.current.focus();
   }, []);
 
-  const { question, quote, answer, id } = questionItem;
-  const splitQuote = quote.split("\n");
+  const { answer, id } = questionItem;
 
   const handleAnswerChange = (e) => {
     setInputValue(e.target.value);
@@ -45,21 +44,26 @@ export default function QuestionsInputItem({
 
     setScore((prevScore) => (isAnswerCorrect ? prevScore + 1 : prevScore));
 
-    handleNextQuestion();
+    setTimeout(() => {
+      handleNextQuestion();
+    }, 500);
   };
 
   return (
     <li className="flex-center">
-      <QuestionHeadline question={question} quote={splitQuote} />
-      <form onSubmit={handleAnswerSubmit} className="flex-center gap-[20px]">
+      <QuestionHeadline questionItem={questionItem} />
+      <form onSubmit={handleAnswerSubmit} className="flex-center">
         <input
           type="text"
           ref={ref}
           value={inputValue}
           onChange={handleAnswerChange}
-          className="border rounded-[10px] py-2 px-4 focus:outline-none focus:border-blue-500 focus:bg-blue-100 mt-[16px]"
+          className="border rounded-[10px] py-2 px-4 mt-[32px] focus:border-blue-500 focus:outline-none focus:ring focus:ring-blue-300 hover:bg-blue-500 hover:border-orange hover:text-blue"
         />
-        <button type="submit" className="btn">
+        <button
+          type="submit"
+          className="btn bg-blue hover:bg-orange hover:text-blue mt-[32px] duration-300"
+        >
           Submit
         </button>
       </form>

@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import ResultList from "../Results/ResultList";
-import QuestionsOptionsItem from "./QuestionsOptionsItem";
-import QuestionsInputItem from "./QuestionsInputItem";
+import QuestionsOptionsItem from "./QuestionsItems/QuestionsOptionsItem";
+import QuestionsInputItem from "./QuestionsItems/QuestionsInputItem";
+import QuestionsImageItem from "./QuestionsItems/QuestionsImageItem";
 
 export default function QuestionsList({ questions }) {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -44,16 +45,27 @@ export default function QuestionsList({ questions }) {
             setScore={setScore}
           />
         );
+      case "image":
+        return (
+          <QuestionsImageItem
+            key={id}
+            handleNextQuestion={handleNextQuestion}
+            currentQuestion={currentQuestion}
+            setScore={setScore}
+            setUserAnswers={setUserAnswers}
+            userAnswers={userAnswers}
+          />
+        );
       default:
     }
   };
 
   return (
-    <ul className="mt-[40px] p-[60px] rounded-[10px] bg-white">
+    <ul className="mt-[40px] px-[40px] pt-[32px] pb-[60px] rounded-[10px] bg-white text-center">
       {currentQuestionIndex < questions.length ? (
         <div className="flex-center">
-          <div className="bg-[brown] rounded-[30px] p-[20px] font-semibold">
-            <p className="text-white text-lg">
+          <div className="bg-headline rounded-[30px] p-[12px]">
+            <p className="text-white text-xs uppercase">
               Question {currentQuestion.id} of {questions.length}
             </p>
           </div>

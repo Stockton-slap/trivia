@@ -1,6 +1,6 @@
 import React from "react";
-import AnswersList from "../Answers/AnswersList";
-import QuestionHeadline from "./QuestionHeadline";
+import AnswersList from "../../Answers/AnswersList";
+import QuestionHeadline from "../QuestionHeadline/QuestionHeadline";
 
 export default function QuestionsOptionsItem({
   handleNextQuestion,
@@ -9,11 +9,11 @@ export default function QuestionsOptionsItem({
   setUserAnswers,
   userAnswers,
 }) {
-  const { question, quote, answers } = currentQuestion;
+  const { answers } = currentQuestion;
 
   return (
     <li className="flex-center">
-      <QuestionHeadline question={question} quote={quote} />
+      <QuestionHeadline questionItem={currentQuestion} />
       <AnswersList
         answers={answers}
         handleNextQuestion={handleNextQuestion}

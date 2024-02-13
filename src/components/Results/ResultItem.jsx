@@ -1,5 +1,5 @@
 import React, { useMemo } from "react";
-import QuestionHeadline from "../Questions/QuestionHeadline";
+import QuestionHeadline from "../Questions/QuestionHeadline/QuestionHeadline";
 
 export default function ResultItem({
   question,
@@ -40,7 +40,7 @@ export default function ResultItem({
         } bg-[#ab2626]`}
       />
       <QuestionHeadline question={question} quote={quote} />
-      <p className="mt-[10px] text-orange">Your answer: {userAnswer}</p>
+      <p className="mt-[10px] text-bg">Your answer: {userAnswer}</p>
       <p className="mt-[10px] text-green">Correct answer: {renderedQuote}</p>
     </li>
   );
