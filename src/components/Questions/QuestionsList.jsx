@@ -17,7 +17,7 @@ export default function QuestionsList({ questions }) {
 
   const renderQuestionsVariant = () => {
     if (!currentQuestion) {
-      return;
+      return null;
     }
 
     const { type, id } = currentQuestion;
@@ -38,7 +38,7 @@ export default function QuestionsList({ questions }) {
         return (
           <QuestionsInputItem
             key={id}
-            questionItem={currentQuestion}
+            currentQuestion={currentQuestion}
             handleNextQuestion={handleNextQuestion}
             setUserAnswers={setUserAnswers}
             userAnswers={userAnswers}

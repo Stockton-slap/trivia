@@ -5,7 +5,7 @@ export default function QuestionHeadlineList({ quote }) {
   return (
     <ul className="items-start mt-[32px]">
       {quote.map((item, index) => (
-        <QuestionHeadlineItem item={item} index={index} />
+        <QuestionHeadlineItem key={index} item={item} index={index} />
       ))}
     </ul>
   );
