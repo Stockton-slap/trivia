@@ -10,6 +10,13 @@
                "quote": "You know how to fight six men, we can teach you how to engage six hundred.",
                "answers": [{"id": "1", "answer": "Mulan", "isCorrect": false}, {"id": "2", "answer": "The Matrix", "isCorrect": false}, {"id": "3", "answer": "Kill Bill: Vol 1", "isCorrect": false}, {"id": "4", "answer": "Batman Begins", "isCorrect": true}],
                "type": "options"
+            },
+            {
+               "id": "2",
+               "question": "Which movie is this quote from: ",
+               "quote": "Look at the stars. The great kings of the past look down on us from those stars.",
+               "answers": [{"id": "1", "answer": "Stardust", "isCorrect": false}, {"id": "2", "answer": "Prometheus", "isCorrect": false}, {"id": "3", "answer": "August Rush", "isCorrect": false}, {"id": "4", "answer": "The Lion King", "isCorrect": true}],
+               "type": "options"
             }
          ]
       },  

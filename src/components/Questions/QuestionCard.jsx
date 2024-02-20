@@ -15,16 +15,14 @@ export default function QuestionCard() {
 
         setQuestions(data.rounds[roundId - 1].questions);
       } catch (error) {
-        console.error("Error fetching JSON data:", error);
+        return <div>{error}</div>;
       }
     };
 
     fetchData();
   }, [roundId]);
 
-  if (questions === null) {
-    return <div>Loading...</div>;
-  }
+  if (!questions) return <span>Loading...</span>;
 
   return (
     <div className="bg-bg rounded-[10px] p-[20px] m-[20px]">

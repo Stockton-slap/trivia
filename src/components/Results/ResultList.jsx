@@ -12,18 +12,12 @@ export default function ResultList({ score, questions, userAnswers }) {
 
       <ul className="flex-center mt-[80px]">
         {questions.map((questionItem, index) => {
-          const { id, question, quote, answers, type, answer } = questionItem;
-
           return (
             <ResultItem
-              key={id}
+              key={questionItem.id}
               index={index}
-              question={question}
-              quote={quote}
-              answers={answers}
+              questionItem={questionItem}
               userAnswers={userAnswers}
-              type={type}
-              answer={answer}
             />
           );
         })}

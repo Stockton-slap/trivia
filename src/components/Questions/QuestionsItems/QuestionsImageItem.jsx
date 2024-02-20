@@ -9,13 +9,11 @@ export default function QuestionsImageItem({
   setUserAnswers,
   userAnswers,
 }) {
-  const { answers } = currentQuestion;
-
   return (
     <li className="flex-center">
       <QuestionHeadline questionItem={currentQuestion} />
       <AnswersList
-        answers={answers}
+        currentQuestion={currentQuestion}
         handleNextQuestion={handleNextQuestion}
         setScore={setScore}
         setUserAnswers={setUserAnswers}

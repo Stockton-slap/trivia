@@ -1,17 +1,11 @@
 import React, { useMemo } from "react";
 import QuestionHeadline from "../Questions/QuestionHeadline/QuestionHeadline";
 
-export default function ResultItem({
-  question,
-  quote,
-  index,
-  answers,
-  userAnswers,
-  type,
-  answer,
-}) {
+export default function ResultItem({ index, userAnswers, questionItem }) {
   const notFirstItem = index !== 0;
   const userAnswer = userAnswers[index].answer;
+
+  const { quote, answers, type, answer } = questionItem;
 
   const isAnswerCorrect = useMemo(() => {
     switch (type) {
@@ -27,7 +21,7 @@ export default function ResultItem({
     }
   }, [answer, answers, type, userAnswer]);
 
-  const renderedQuote =
+  const correctAnswer =
     type === "input"
       ? quote.replace("....", answer[0])
       : answers.find(({ isCorrect }) => isCorrect).answer;
@@ -39,9 +33,9 @@ export default function ResultItem({
           isAnswerCorrect ? "bg-[green]" : "bg-[red]"
         } bg-[#ab2626]`}
       />
-      <QuestionHeadline question={question} quote={quote} />
+      <QuestionHeadline questionItem={questionItem} />
       <p className="mt-[10px] text-bg">Your answer: {userAnswer}</p>
-      <p className="mt-[10px] text-green">Correct answer: {renderedQuote}</p>
+      <p className="mt-[10px] text-green">Correct answer: {correctAnswer}</p>
     </li>
   );
 }

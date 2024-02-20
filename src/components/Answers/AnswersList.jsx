@@ -3,7 +3,7 @@ import AnswersItem from "./AnswersItem";
 import shuffledArray from "../../utils/shuffledArray";
 
 export default function AnswersList({
-  answers,
+  currentQuestion,
   handleNextQuestion,
   setScore,
   setUserAnswers,
@@ -11,8 +11,11 @@ export default function AnswersList({
 }) {
   const [selectedAnswerId, setSelectedAnswerId] = useState(null);
   const [isClickDisabled, setIsClickDisabled] = useState(false);
+  const { answers } = currentQuestion;
 
   const handleAnswerClick = (id, answer, isCorrect) => {
+    if (!currentQuestion) return null;
+
     if (isClickDisabled) {
       return;
     }

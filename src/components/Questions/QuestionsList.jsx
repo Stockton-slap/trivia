@@ -15,50 +15,52 @@ export default function QuestionsList({ questions }) {
 
   const currentQuestion = questions[currentQuestionIndex];
 
-  const renderQuestionsVariant = () => {
-    if (!currentQuestion) {
-      return null;
-    }
+  const renderQuestionsTypes = () => {
+    if (currentQuestion) {
+      const { type, id } = currentQuestion;
 
-    const { type, id } = currentQuestion;
-
-    switch (type) {
-      case "options":
-        return (
-          <QuestionsOptionsItem
-            key={id}
-            handleNextQuestion={handleNextQuestion}
-            currentQuestion={currentQuestion}
-            setScore={setScore}
-            setUserAnswers={setUserAnswers}
-            userAnswers={userAnswers}
-          />
-        );
-      case "input":
-        return (
-          <QuestionsInputItem
-            key={id}
-            currentQuestion={currentQuestion}
-            handleNextQuestion={handleNextQuestion}
-            setUserAnswers={setUserAnswers}
-            userAnswers={userAnswers}
-            setScore={setScore}
-          />
-        );
-      case "image":
-        return (
-          <QuestionsImageItem
-            key={id}
-            handleNextQuestion={handleNextQuestion}
-            currentQuestion={currentQuestion}
-            setScore={setScore}
-            setUserAnswers={setUserAnswers}
-            userAnswers={userAnswers}
-          />
-        );
-      default:
+      switch (type) {
+        case "options":
+          return (
+            <QuestionsOptionsItem
+              key={id}
+              handleNextQuestion={handleNextQuestion}
+              currentQuestion={currentQuestion}
+              setScore={setScore}
+              setUserAnswers={setUserAnswers}
+              userAnswers={userAnswers}
+            />
+          );
+        case "input":
+          return (
+            <QuestionsInputItem
+              key={id}
+              currentQuestion={currentQuestion}
+              handleNextQuestion={handleNextQuestion}
+              setUserAnswers={setUserAnswers}
+              userAnswers={userAnswers}
+              setScore={setScore}
+            />
+          );
+        case "image":
+          return (
+            <QuestionsImageItem
+              key={id}
+              handleNextQuestion={handleNextQuestion}
+              currentQuestion={currentQuestion}
+              setScore={setScore}
+              setUserAnswers={setUserAnswers}
+              userAnswers={userAnswers}
+            />
+          );
+        default:
+      }
+    } else {
+      return <div>Error: No current question found.</div>;
     }
   };
+
+  const renderedQuestions = renderQuestionsTypes();
 
   return (
     <ul className="mt-[40px] px-[40px] pt-[32px] pb-[60px] rounded-[10px] bg-white text-center">
@@ -69,7 +71,7 @@ export default function QuestionsList({ questions }) {
               Question {currentQuestion.id} of {questions.length}
             </p>
           </div>
-          {renderQuestionsVariant()}
+          {renderedQuestions}
         </div>
       ) : (
         <ResultList
