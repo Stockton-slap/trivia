@@ -4,8 +4,21 @@
       "id": "1",
       "title": "Quotes",
       "questions": [
-            
-        
+  
+              {
+               "id": "7",
+               "question": "Fill in the missing word from the quote from the cartoon: \"Aladdin\"",
+               "quote": "Character I: \"It's all so magical.\" \nCharacter II:  \"Yeah\" \nCharacter I: \"It's a shame Abou had to miss this.\" \nCharacter II: \"Nah, he hates fireworks. He doesn't really like .... either.\"",
+               "answer": ["flying", "to fly"],
+               "type": "input"
+            },
+              {
+               "id": "8",
+               "question": "Fill in the missing word from the quote from the movie: \"Gentlemen\"",
+               "quote": "Give me the .... and take the money.",
+               "answer": ["phone", "telephone"],
+               "type": "input"
+            },
               {
                "id": "9",
                "question": "Fill in the missing word from the quote from the movie: \"Schindler's List\"",

@@ -31,7 +31,7 @@ export default function QuestionCard() {
   if (questions.length === 0) return <LoaderSpinner />;
 
   return (
-    <div className="bg-bg rounded-[10px] p-[20px] m-[20px]">
+    <div className="bg-bg rounded-[10px] p-[20px] m-[20px] flex-center">
       <QuestionHeader />
       <QuestionsList questions={questions} />
     </div>
