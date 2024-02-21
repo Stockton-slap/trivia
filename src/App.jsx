@@ -1,6 +1,7 @@
 import React, { lazy, Suspense } from "react";
 import "./index.css";
 import { Route, Routes } from "react-router-dom";
+import LoaderSpinner from "./components/Loader/Loader";
 
 const HomePage = lazy(() => import("./pages/HomePage"));
 const QuizPage = lazy(() => import("./pages/QuizPage"));
@@ -9,7 +10,7 @@ const NotFoundPage = lazy(() => import("./pages/NotFoundPage"));
 
 function App() {
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<LoaderSpinner />}>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/quiz" element={<QuizPage />} />

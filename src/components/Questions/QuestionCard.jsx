@@ -1,10 +1,15 @@
 import React, { useEffect, useState } from "react";
-import QuestionHeader from "./QuestionHeader";
-import QuestionsList from "./QuestionsList";
 import { useParams } from "react-router-dom";
 
+import QuestionHeader from "./QuestionHeader";
+import QuestionsList from "./QuestionsList";
+import Error from "../Error/Error";
+import LoaderSpinner from "../Loader/Loader";
+
 export default function QuestionCard() {
-  const [questions, setQuestions] = useState(null);
+  const [questions, setQuestions] = useState([]);
+  const [error, setError] = useState("");
+
   const { roundId } = useParams();
 
   useEffect(() => {
@@ -14,15 +19,16 @@ export default function QuestionCard() {
         const data = await response.json();
 
         setQuestions(data.rounds[roundId - 1].questions);
-      } catch (error) {
-        return <div>{error}</div>;
+      } catch (e) {
+        setError("Request for question json was failed");
       }
     };
 
     fetchData();
   }, [roundId]);
 
-  if (!questions) return <span>Loading...</span>;
+  if (error) return <Error />;
+  if (questions.length === 0) return <LoaderSpinner />;
 
   return (
     <div className="bg-bg rounded-[10px] p-[20px] m-[20px]">

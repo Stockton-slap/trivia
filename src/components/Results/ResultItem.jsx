@@ -26,16 +26,28 @@ export default function ResultItem({ index, userAnswers, questionItem }) {
       ? quote.replace("....", answer[0])
       : answers.find(({ isCorrect }) => isCorrect).answer;
 
+  const isCharacterI = correctAnswer.startsWith("Character I:");
+  const isCharacterII = correctAnswer.startsWith("Character II:");
+  const isDialogue = isCharacterI || isCharacterII;
+
   return (
-    <li className={`w-[600px] ${notFirstItem && "mt-[40px]"}`}>
+    <li
+      className={`w-[600px] ${
+        notFirstItem && "mt-[40px]"
+      } border-[1px] border-bg overflow-hidden p-[8px] rounded-[10px] text-left`}
+    >
       <div
-        className={`w-full h-[40px] ${
-          isAnswerCorrect ? "bg-[green]" : "bg-[red]"
+        className={`w-full h-[40px] rounded-[8px] ${
+          isAnswerCorrect ? "bg-green" : "bg-red"
         } bg-[#ab2626]`}
       />
-      <QuestionHeadline questionItem={questionItem} />
-      <p className="mt-[10px] text-bg">Your answer: {userAnswer}</p>
-      <p className="mt-[10px] text-green">Correct answer: {correctAnswer}</p>
+      <QuestionHeadline questionItem={questionItem} withAnswer />
+      <p className="mt-[10px] text-grey font-bold text-xs">
+        Your answer: {userAnswer}
+      </p>
+      <p className="mt-[10px] text-green font-bold  text-xs">
+        Correct answer: {correctAnswer}
+      </p>
     </li>
   );
 }
