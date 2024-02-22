@@ -9,7 +9,7 @@ export default function QuestionHeadlineList({ quote, withAnswer }) {
           key={index}
           item={item}
           index={index}
-          withAnswer
+          withAnswer={withAnswer}
         />
       ))}
     </ul>

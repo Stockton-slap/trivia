@@ -10,6 +10,7 @@ export default function ResultItem({ index, userAnswers, questionItem }) {
   const isAnswerCorrect = useMemo(() => {
     switch (type) {
       case "options":
+      case "image":
         return answers.find(({ isCorrect }) => isCorrect).answer === userAnswer;
       case "input":
         return (
@@ -33,7 +34,7 @@ export default function ResultItem({ index, userAnswers, questionItem }) {
 
   return (
     <li
-      className={`w-[800px] h-[400px] ${
+      className={`w-[800px] ${
         notFirstItem && "mt-[40px]"
       } border-[1px] border-bg overflow-hidden p-[8px] rounded-[10px] text-left`}
     >
@@ -50,38 +51,32 @@ export default function ResultItem({ index, userAnswers, questionItem }) {
       <div className="flex items-baseline gap-[10px]">
         <p className="font-bold text-green">Correct answer: </p>
         {isDialogue ? (
-          <>
-            <ul>
-              {splitQuote.map((quote, quoteIndex) => {
-                const [character, dialogue] = quote.split(":");
-                const splitDialogue = dialogue.split(" ");
+          <ul>
+            {splitQuote.map((quote, quoteIndex) => {
+              const [character, dialogue] = quote.split(":");
+              const splitDialogue = dialogue.split(" ");
 
-                return (
-                  <li key={quoteIndex} className={`flex items-center`}>
-                    <p
-                      className={`${
-                        isDialogue && "font-bold"
-                      } text-start text-green font-bold text-xs`}
-                    >
-                      {`${character}:`}
-                    </p>
-                    <p className="ml-[8px] italic text-green text-xs">
-                      {splitDialogue.map((word, index) => (
-                        <span
-                          key={index}
-                          className={word === answer[0] ? "underline" : ""}
-                        >
-                          {word}{" "}
-                        </span>
-                      ))}
-                    </p>
-                  </li>
-                );
-              })}
-            </ul>
-          </>
+              return (
+                <li key={quoteIndex} className={`flex items-center`}>
+                  <p className="text-start text-green font-bold text-xs">
+                    {`${character}:`}
+                  </p>
+                  <p className="ml-[8px] italic text-green text-xs">
+                    {splitDialogue.map((word, index) => (
+                      <span
+                        key={index}
+                        className={word === answer[0] ? "underline" : ""}
+                      >
+                        {word}{" "}
+                      </span>
+                    ))}
+                  </p>
+                </li>
+              );
+            })}
+          </ul>
         ) : (
-          <p className=" text-green text-xs">{correctAnswer}</p>
+          <p className="text-green text-xs">{correctAnswer}</p>
         )}
       </div>
     </li>

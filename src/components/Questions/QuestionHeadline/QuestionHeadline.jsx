@@ -1,5 +1,6 @@
 import React from "react";
 import QuestionHeadlineList from "./QuestionHeadlineList";
+import Image from "../../common/Image";
 
 export default function QuestionHeadline({ questionItem, withAnswer = false }) {
   if (!questionItem) return null;
@@ -21,16 +22,31 @@ export default function QuestionHeadline({ questionItem, withAnswer = false }) {
         );
       case "input":
         const splitQuote = questionItem.quote.split("\n");
-        return <QuestionHeadlineList quote={splitQuote} withAnswer />;
+        return (
+          <QuestionHeadlineList quote={splitQuote} withAnswer={withAnswer} />
+        );
       case "image":
         const { img1, img2 } = questionItem;
 
         const imagePath = `/images/screenshots/${img1}.jpeg`;
         const imagePath2 = `/images/screenshots/${img2}.jpeg`;
+
         return (
-          <div className="w-[500px]">
-            <img src={imagePath} alt="" />
-            {withAnswer && <img src={imagePath2} alt="" />}
+          <div
+            className={`mt-[20px] ${withAnswer && "flex-center gap-[16px]"}`}
+          >
+            <Image
+              imagePath={imagePath}
+              className={`w-[600px] h-[300px] ${
+                withAnswer ? "object-cover" : ""
+              }`}
+            />
+            {withAnswer && (
+              <Image
+                imagePath={imagePath2}
+                className="w-[600px] h-[300px] object-cover"
+              />
+            )}
           </div>
         );
       default:

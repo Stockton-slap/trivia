@@ -9,13 +9,7 @@ export default function QuestionHeadlineItem({ item, index, withAnswer }) {
 
   return isDialogue ? (
     <li key={index} className={`flex items-center`}>
-      <p
-        className={`${
-          (isCharacterI || isCharacterII) && "font-bold"
-        } text-sm text-start`}
-      >
-        {`${character}:`}
-      </p>
+      <p className="text-sm font-bold text-start">{`${character}:`}</p>
       <p className="ml-[8px] text-xs italic">{dialogue}</p>
     </li>
   ) : (
