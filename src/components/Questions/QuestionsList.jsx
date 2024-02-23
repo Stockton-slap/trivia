@@ -67,7 +67,14 @@ export default function QuestionsList({
   const renderedQuestions = renderQuestionsTypes();
 
   return (
-    <ul className="mt-[40px] px-[40px] pt-[32px] pb-[60px] rounded-[10px] bg-white text-center">
+    <ul
+      className="mt-[40px] px-[40px] pt-[32px] pb-[60px] rounded-[10px] bg-white text-center"
+      style={{
+        backgroundImage: currentQuestion
+          ? `url(/images/quotes/${currentQuestion.img}.jpeg)`
+          : "none",
+      }}
+    >
       {currentQuestionIndex < questions.length ? (
         <div className="flex-center">
           <div className="bg-gradient-question rounded-[30px] p-[12px]">

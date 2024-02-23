@@ -38,7 +38,6 @@ module.exports = {
     },
     extend: {
       backgroundImage: {
-        hero: 'url("./media/images/background/welcome-background.png")',
         "gradient-btn":
           "linear-gradient(138deg, #ff2882 22.4%,    #963cff 69.51%)",
         "gradient-header":
