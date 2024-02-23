@@ -44,6 +44,8 @@ module.exports = {
           "linear-gradient(138deg, #C33764 22.4%,    #1D2671 69.51%)",
         "gradient-question":
           "linear-gradient(138deg, #764BA2 22.4%,    #667EEA 69.51%)",
+        "gradient-bg":
+          "linear-gradient(138deg, #A9F1DF 22.4%,    #FFBBBB 69.51%)",
       },
     },
   },
