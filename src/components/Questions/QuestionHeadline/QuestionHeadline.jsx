@@ -23,7 +23,14 @@ export default function QuestionHeadline({ questionItem, withAnswer = false }) {
       case "input":
         const splitQuote = questionItem.quote.split("\n");
         return (
-          <QuestionHeadlineList quote={splitQuote} withAnswer={withAnswer} />
+          !withAnswer && (
+            <div className="flex justify-center">
+              <QuestionHeadlineList
+                quote={splitQuote}
+                withAnswer={withAnswer}
+              />
+            </div>
+          )
         );
       case "image":
         const { img1, img2 } = questionItem;
@@ -33,7 +40,11 @@ export default function QuestionHeadline({ questionItem, withAnswer = false }) {
 
         return (
           <div
-            className={`mt-[20px] ${withAnswer && "flex-center gap-[16px]"}`}
+            className={`mt-[20px]  ${
+              withAnswer
+                ? "flex-center gap-[16px]"
+                : "p-[20px] bg-bg rounded-[10px]"
+            }`}
           >
             <Image
               imagePath={imagePath}
@@ -56,7 +67,11 @@ export default function QuestionHeadline({ questionItem, withAnswer = false }) {
   const renderHeadline = renderHeadlineType();
 
   return (
-    <div>
+    <div
+      className={`${withAnswer && "flex flex-col flex-start"} ${
+        type === "image" && "items-center"
+      }`}
+    >
       <h2 className={`mt-[16px] ${withAnswer ? "text-sm" : "text-base"}`}>
         {question}
       </h2>

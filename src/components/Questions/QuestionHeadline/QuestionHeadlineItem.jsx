@@ -8,9 +8,9 @@ export default function QuestionHeadlineItem({ item, index, withAnswer }) {
   const [character, dialogue] = item.split(":");
 
   return isDialogue ? (
-    <li key={index} className={`flex items-center`}>
-      <p className="text-sm font-bold text-start">{`${character}:`}</p>
-      <p className="ml-[8px] text-xs italic">{dialogue}</p>
+    <li key={index} className="flex items-baseline">
+      <p className="text-sm text-start">{`${character}:`}</p>
+      <p className="ml-[8px] text-xs">{dialogue}</p>
     </li>
   ) : (
     <li key={index}>

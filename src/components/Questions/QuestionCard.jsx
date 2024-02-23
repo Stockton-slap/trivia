@@ -9,6 +9,8 @@ import LoaderSpinner from "../Loader/Loader";
 export default function QuestionCard() {
   const [questions, setQuestions] = useState([]);
   const [error, setError] = useState("");
+  const [score, setScore] = useState(0);
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
 
   const { roundId } = useParams();
 
@@ -32,8 +34,18 @@ export default function QuestionCard() {
 
   return (
     <div className="bg-bg rounded-[10px] p-[20px] m-[20px] flex-center">
-      <QuestionHeader />
-      <QuestionsList questions={questions} />
+      <QuestionHeader
+        score={score}
+        questions={questions}
+        currentQuestionIndex={currentQuestionIndex}
+      />
+      <QuestionsList
+        questions={questions}
+        score={score}
+        setScore={setScore}
+        currentQuestionIndex={currentQuestionIndex}
+        setCurrentQuestionIndex={setCurrentQuestionIndex}
+      />
     </div>
   );
 }

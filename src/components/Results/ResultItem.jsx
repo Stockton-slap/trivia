@@ -34,22 +34,29 @@ export default function ResultItem({ index, userAnswers, questionItem }) {
 
   return (
     <li
-      className={`w-[800px] ${
+      className={`w-full ${
         notFirstItem && "mt-[40px]"
-      } border-[1px] border-bg overflow-hidden p-[8px] rounded-[10px] text-left`}
+      } border-[1px] border-bg overflow-hidden p-[8px] rounded-[10px]`}
     >
       <div
         className={`w-full h-[40px] rounded-[8px] ${
           isAnswerCorrect ? "bg-green" : "bg-red"
         } bg-[#ab2626]`}
       />
+
       <QuestionHeadline questionItem={questionItem} withAnswer />
-      <p className="mt-[10px] text-grey font-bold text-xs">
-        Your answer: {userAnswer}
-      </p>
 
       <div className="flex items-baseline gap-[10px]">
-        <p className="font-bold text-green">Correct answer: </p>
+        <p className="mt-[10px] text-grey font-bold text-xs w-[130px]  text-left">
+          Your answer:
+        </p>
+        <span className="text-grey">{userAnswer}</span>
+      </div>
+
+      <div className="flex items-baseline gap-[10px]">
+        <p className="font-bold text-green w-[130px]  text-left">
+          Correct answer:{" "}
+        </p>
         {isDialogue ? (
           <ul>
             {splitQuote.map((quote, quoteIndex) => {
@@ -57,11 +64,11 @@ export default function ResultItem({ index, userAnswers, questionItem }) {
               const splitDialogue = dialogue.split(" ");
 
               return (
-                <li key={quoteIndex} className={`flex items-center`}>
-                  <p className="text-start text-green font-bold text-xs">
+                <li key={quoteIndex} className="flex">
+                  <p className="text-start text-green text-xs w-[90px]">
                     {`${character}:`}
                   </p>
-                  <p className="ml-[8px] italic text-green text-xs">
+                  <p className="ml-[8px] text-green text-xs">
                     {splitDialogue.map((word, index) => (
                       <span
                         key={index}

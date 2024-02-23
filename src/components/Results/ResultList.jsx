@@ -4,13 +4,7 @@ import ResultItem from "./ResultItem";
 export default function ResultList({ score, questions, userAnswers }) {
   return (
     <div className="flex-center">
-      <div className="p-[40px] bg-blue rounded-[20px] text-white">
-        <h2 className="text-xl font-bold">
-          {score} out of {questions.length}
-        </h2>
-      </div>
-
-      <ul className="flex-center mt-[80px]">
+      <ul className="flex-center mt-[40px]">
         {questions.map((questionItem, index) => {
           return (
             <ResultItem

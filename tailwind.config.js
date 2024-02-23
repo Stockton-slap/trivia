@@ -10,7 +10,6 @@ module.exports = {
     colors: {
       white: "#fff",
       black: "#000",
-      header: "#0285F4",
       bg: "#DEDFE4",
       orange: "#FF7F50",
       green: "#008000",
@@ -18,7 +17,6 @@ module.exports = {
       blue: "#000A52",
       textColor: "#37003c",
       hoverAnswer: "#00bbff",
-      brown: "#492000",
       grey: "#676767",
     },
     fontSize: {
@@ -41,6 +39,12 @@ module.exports = {
     extend: {
       backgroundImage: {
         hero: 'url("./media/images/background/welcome-background.png")',
+        "gradient-btn":
+          "linear-gradient(138deg, #ff2882 22.4%,    #963cff 69.51%)",
+        "gradient-header":
+          "linear-gradient(138deg, #C33764 22.4%,    #1D2671 69.51%)",
+        "gradient-question":
+          "linear-gradient(138deg, #764BA2 22.4%,    #667EEA 69.51%)",
       },
     },
   },

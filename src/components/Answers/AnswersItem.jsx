@@ -1,6 +1,5 @@
 import React from "react";
-
-const variantLetters = ["A", "B", "C", "D"];
+import getVariantLetters from "../../utils/getVariantLetters";
 
 export default function AnswersItem({
   onAnswerClick,
@@ -8,7 +7,7 @@ export default function AnswersItem({
   answer,
   index,
 }) {
-  const letter = variantLetters[index];
+  const letter = getVariantLetters(index);
 
   //   const displayAnswer =
   //     answer.length > 20 ? `${answer.slice(0, 20)}...` : answer;
@@ -23,7 +22,7 @@ export default function AnswersItem({
           type="button"
           className="flex items-center gap-[24px] overflow-hidden "
         >
-          <div className="bg-orange px-[20px] group-hover:bg-hoverAnswer duration-300 py-[12px] rounded-[10px] flex items-center justify-center text-sm font-bold">
+          <div className="bg-gradient-btn px-[20px] group-hover:bg-hoverAnswer duration-300 py-[12px] rounded-[10px] flex items-center justify-center text-sm font-bold">
             {letter}
           </div>
           <p className="font-semibold text-textColor">{answer}</p>
