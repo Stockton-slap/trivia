@@ -11,7 +11,7 @@ export default function QuestionsImageItem({
   questions,
 }) {
   return (
-    <li className="flex-center">
+    <li className="flex-center gap-[30px] p-[40px] rounded-[10px]">
       <div className="bg-gradient-question rounded-[30px] p-[12px]">
         <p className="text-white text-xs uppercase">
           Question {currentQuestion.id} of {questions.length}

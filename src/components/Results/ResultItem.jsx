@@ -36,7 +36,7 @@ export default function ResultItem({ index, userAnswers, questionItem }) {
     <li
       className={`w-full ${
         notFirstItem && "mt-[40px]"
-      } border-[1px] border-bg overflow-hidden p-[8px] rounded-[10px]`}
+      } border-[1px] border-black overflow-hidden p-[8px] rounded-[10px]`}
     >
       <div
         className={`w-full h-[40px] rounded-[8px] ${

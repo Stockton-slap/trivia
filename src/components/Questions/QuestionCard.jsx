@@ -41,7 +41,6 @@ export default function QuestionCard() {
       />
       <QuestionsList
         questions={questions}
-        score={score}
         setScore={setScore}
         currentQuestionIndex={currentQuestionIndex}
         setCurrentQuestionIndex={setCurrentQuestionIndex}

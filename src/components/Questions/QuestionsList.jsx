@@ -6,7 +6,6 @@ import QuestionsImageItem from "./QuestionsItems/QuestionsImageItem";
 
 export default function QuestionsList({
   questions,
-  score,
   setScore,
   currentQuestionIndex,
   setCurrentQuestionIndex,
@@ -70,23 +69,27 @@ export default function QuestionsList({
   const renderedQuestions = renderQuestionsTypes();
   const hasMoreQuestions = currentQuestionIndex < questions.length;
 
+  let backgroundImageUrl;
+
+  if (currentQuestion && currentQuestion.img) {
+    if (currentQuestion.quote) {
+      backgroundImageUrl = `url(/images/quotes/${currentQuestion.img}.jpeg)`;
+    } else {
+      backgroundImageUrl = `url(/images/trivia/${currentQuestion.img}.jpeg)`;
+    }
+  }
+
   return (
     <ul
-      className="mt-[40px] px-[40px] pt-[32px] pb-[60px] rounded-[10px] bg-gradient-bg text-center"
+      className="mt-[40px] p-[40px] rounded-[10px] text-center bg-gradient-bg"
       style={{
-        backgroundImage:
-          currentQuestion.img &&
-          `url(/images/quotes/${currentQuestion.img}.jpeg)`,
+        backgroundImage: backgroundImageUrl || "",
       }}
     >
       {hasMoreQuestions ? (
         renderedQuestions
       ) : (
-        <ResultList
-          score={score}
-          questions={questions}
-          userAnswers={userAnswers}
-        />
+        <ResultList questions={questions} userAnswers={userAnswers} />
       )}
     </ul>
   );

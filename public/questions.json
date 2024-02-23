@@ -174,8 +174,89 @@
       },
        {
       "id": "3",
-      "title": "Screenshots",
-      "questions": []
+      "title": "Trivia",
+      "questions": [
+            {
+                "id": "1",
+                "question": "How many times did Sean Bean die in his movies throughout his career (by 2023)?",
+                "answers": [{"id": "1", "answer": "13", "isCorrect": false}, {"id": "2", "answer": "18", "isCorrect": false}, {"id": "3", "answer": "28", "isCorrect": false}, {"id": "4", "answer": "24", "isCorrect": true}],
+                "img": "bean1",
+                "img2": "bean2",
+                "type": "options"
+            },
+             {
+                "id": "2",
+                "question": "Who starred as King Baldwin in a movie ''Heaven Kingdom''?",
+                "answers": [{"id": "1", "answer": "unknown", "isCorrect": false}, {"id": "2", "answer": "unknown", "isCorrect": false}, {"id": "3", "answer": "unknown", "isCorrect": false}, {"id": "4", "answer": "Edward Norton", "isCorrect": true}],
+                "img": "ed1",
+                "img2": "ed2",
+                "type": "options"
+            },
+             {
+                "id": "3",
+                "question": "Which movie is renowned for being the most profitable achieving the highest return on investments in film history (by 2023)?",
+                "answers": [{"id": "1", "answer": "unknown", "isCorrect": false}, {"id": "2", "answer": "unknown", "isCorrect": false}, {"id": "3", "answer": "unknown", "isCorrect": false}, {"id": "4", "answer": "Paranormal activity", "isCorrect": true}],
+                "img": "paranormal1",
+                "img2": "paranormal2",
+                "type": "options"
+            },
+             {
+                "id": "4",
+                "question": "Which actor had won back-to-back Oscar award for ''Best Actor'' in 1993 and 1994?",
+                "answers": [{"id": "1", "answer": "unknown", "isCorrect": false}, {"id": "2", "answer": "unknown", "isCorrect": false}, {"id": "3", "answer": "unknown", "isCorrect": false}, {"id": "4", "answer": "Tom Hanks", "isCorrect": true}],
+                "img": "tom1",
+                "img2": "tom2",
+                "type": "options"
+            },
+             {
+                "id": "5",
+                "question": "What year was ''Godfather I'' released in?",
+                "answers": [{"id": "1", "answer": "1963", "isCorrect": false}, {"id": "2", "answer": "1966", "isCorrect": false}, {"id": "3", "answer": "1969", "isCorrect": false}, {"id": "4", "answer": "1972", "isCorrect": true}],
+                "img": "godfather1",
+                "img2": "godfather2",
+                "type": "options"
+            },
+             {
+                "id": "6",
+                "question": "How many years had passed between the release of the original ''Blade Runner'' and its sequel ''Blade Runner 2049''?",
+                "answers": [{"id": "1", "answer": "20", "isCorrect": false}, {"id": "2", "answer": "25", "isCorrect": false}, {"id": "3", "answer": "30", "isCorrect": false}, {"id": "4", "answer": "35", "isCorrect": true}],
+                "img": "runner1",
+                "img2": "runner2",
+                "type": "options"
+            },
+             {
+                "id": "7",
+                "question": "Which movie does this tagline belong to: ''In space no one can hear you scream''?",
+                "answers": [{"id": "1", "answer": "unknown", "isCorrect": false}, {"id": "2", "answer": "unknown", "isCorrect": false}, {"id": "3", "answer": "unknown", "isCorrect": false}, {"id": "4", "answer": "Alien", "isCorrect": true}],
+                "img": "alien1",
+                "img2": "alien2",
+                "type": "options"
+            },
+             {
+                "id": "8",
+                "question": "Which country was Tom Hank's character from in a movie ''Terminal''?",
+                "answers": [{"id": "1", "answer": "unknown", "isCorrect": false}, {"id": "2", "answer": "unknown", "isCorrect": false}, {"id": "3", "answer": "unknown", "isCorrect": false}, {"id": "4", "answer": "Krakozhia", "isCorrect": true}],
+                "img": "terminal1",
+                "img2": "terminal2",
+                "type": "options"
+            },
+             {
+                "id": "9",
+                "question": "What are the mysterious numbers that appear repeatedly throughout the show ''Lost'' often bringing bad luck to those associated with them?",
+                "answers": [{"id": "1", "answer": "unknown", "isCorrect": false}, {"id": "2", "answer": "unknown", "isCorrect": false}, {"id": "3", "answer": "unknown", "isCorrect": false}, {"id": "4", "answer": "4 8 15 16 23 42", "isCorrect": true}],
+                "img": "lost1",
+                "img2": "lost2",
+                "type": "options"
+            },
+             {
+                "id": "10",
+                "question": "Which of the listed actors have never appeared together in the same movie (by 2023)?",
+                "answers": [{"id": "1", "answer": "Robert de Niro & Ann Hathaway", "isCorrect": false}, {"id": "2", "answer": "Anthony Hopkins & Edward Norton", "isCorrect": false}, {"id": "3", "answer": "Natalie Portman & Hugo Weaving", "isCorrect": false}, {"id": "4", "answer": "Tom Cruise & Will Smith", "isCorrect": true}],
+                "img": "actors1",
+                "img2": "actors2",
+                "type": "options"
+            }
+      ]
       },
        {
       "id": "4",

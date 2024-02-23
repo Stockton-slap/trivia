@@ -44,7 +44,7 @@ export default function AnswersList({
   }, [answers]);
 
   return (
-    <ul className="grid grid-cols-2 gap-8 justify-items-center items-center mt-[32px]">
+    <ul className="grid grid-cols-2 gap-8 justify-items-center items-center">
       {memoizedShuffledAnswers.map(({ id, answer, isCorrect }, index) => (
         <AnswersItem
           answer={answer}

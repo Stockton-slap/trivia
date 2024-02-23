@@ -11,17 +11,19 @@ export default function QuestionHeadline({ questionItem, withAnswer = false }) {
     switch (type) {
       case "options":
         const { quote } = questionItem;
+
         return (
           <p
             className={`mt-[8px] font-semibold italic ${
               withAnswer ? "text-xs" : "text-sm"
             }`}
           >
-            "{quote}"
+            {quote && `"${quote}"`}
           </p>
         );
       case "input":
         const splitQuote = questionItem.quote.split("\n");
+
         return (
           !withAnswer && (
             <div className="flex justify-center">
@@ -43,7 +45,7 @@ export default function QuestionHeadline({ questionItem, withAnswer = false }) {
             className={`mt-[20px]  ${
               withAnswer
                 ? "flex-center gap-[16px]"
-                : "p-[20px] bg-bg rounded-[10px]"
+                : "p-[20px] bg-grey rounded-[10px]"
             }`}
           >
             <Image
@@ -72,9 +74,7 @@ export default function QuestionHeadline({ questionItem, withAnswer = false }) {
         type === "image" && "items-center"
       }`}
     >
-      <h2 className={`mt-[16px] ${withAnswer ? "text-sm" : "text-base"}`}>
-        {question}
-      </h2>
+      <h2 className={`${withAnswer ? "text-sm" : "text-base"}`}>{question}</h2>
 
       {renderHeadline}
     </div>
