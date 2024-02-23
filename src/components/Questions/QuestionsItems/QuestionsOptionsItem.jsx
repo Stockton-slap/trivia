@@ -8,9 +8,15 @@ export default function QuestionsOptionsItem({
   setScore,
   setUserAnswers,
   userAnswers,
+  questions,
 }) {
   return (
-    <li>
+    <li className="flex-center">
+      <div className="bg-gradient-question rounded-[30px] p-[12px]">
+        <p className="text-white text-xs uppercase">
+          Question {currentQuestion.id} of {questions.length}
+        </p>
+      </div>
       <QuestionHeadline questionItem={currentQuestion} />
       <AnswersList
         currentQuestion={currentQuestion}

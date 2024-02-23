@@ -10,6 +10,7 @@ export default function QuestionsInputItem({
   setUserAnswers,
   userAnswers,
   setScore,
+  questions,
 }) {
   const [inputValue, setInputValue] = useState("");
   const [isClickDisabled, setIsClickDisabled] = useState(false);
@@ -59,6 +60,11 @@ export default function QuestionsInputItem({
 
   return (
     <li className="flex-center">
+      <div className="bg-gradient-question rounded-[30px] p-[12px]">
+        <p className="text-white text-xs uppercase">
+          Question {currentQuestion.id} of {questions.length}
+        </p>
+      </div>
       <QuestionHeadline questionItem={currentQuestion} />
       <form onSubmit={handleAnswerSubmit} className="flex-center">
         <input

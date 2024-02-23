@@ -17,12 +17,12 @@ export default function AnswersItem({
       className={`btn bg-bg p-[8px] justify-start ${getItemColor} group`}
       onClick={onAnswerClick}
     >
-      <div className="p-[16px] w-full bg-white rounded-[10px] group-hover:border-[1px] group-hover:border-hoverAnswer group-hover:m-[-1px]">
+      <div className="p-[16px] w-full bg-white rounded-[10px] transition duration-500 ease-in-out group-hover:border-[1px] group-hover:border-hoverAnswer group-hover:m-[-1px]">
         <button
           type="button"
           className="flex items-center gap-[24px] overflow-hidden "
         >
-          <div className="bg-gradient-btn px-[20px] group-hover:bg-hoverAnswer duration-300 py-[12px] rounded-[10px] flex items-center justify-center text-sm font-bold">
+          <div className="bg-gradient-btn px-[20px] py-[12px] rounded-[10px] flex items-center justify-center text-sm font-bold transition duration-500 ease-in-out group-hover:bg-gradient-btn-hover group-hover:scale-90">
             {letter}
           </div>
           <p className="font-semibold text-textColor">{answer}</p>

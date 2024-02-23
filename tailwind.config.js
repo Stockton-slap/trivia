@@ -40,12 +40,14 @@ module.exports = {
       backgroundImage: {
         "gradient-btn":
           "linear-gradient(138deg, #ff2882 22.4%,    #963cff 69.51%)",
+        "gradient-btn-hover":
+          "linear-gradient(138deg, #05f0ff 22.4%,    #7367ff 69.51%)",
         "gradient-header":
           "linear-gradient(138deg, #C33764 22.4%,    #1D2671 69.51%)",
         "gradient-question":
           "linear-gradient(138deg, #764BA2 22.4%,    #667EEA 69.51%)",
         "gradient-bg":
-          "linear-gradient(138deg, #A9F1DF 22.4%,    #FFBBBB 69.51%)",
+          "linear-gradient(138deg, #4E65FF 22.4%,    #92EFFD 69.51%)",
       },
     },
   },
