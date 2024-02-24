@@ -60,6 +60,7 @@ export default function QuestionsList({
             />
           );
         default:
+          return <div>Error: No current question found.</div>;
       }
     } else {
       return <div>Error: No current question found.</div>;
@@ -80,17 +81,19 @@ export default function QuestionsList({
   }
 
   return (
-    <ul
-      className="mt-[40px] p-[40px] rounded-[10px] text-center bg-gradient-bg"
-      style={{
-        backgroundImage: backgroundImageUrl || "",
-      }}
-    >
+    <>
       {hasMoreQuestions ? (
-        renderedQuestions
+        <ul
+          className="mt-[40px] p-[40px] rounded-[10px] text-center bg-gradient-bg bg-cover"
+          style={{
+            backgroundImage: backgroundImageUrl || "",
+          }}
+        >
+          {renderedQuestions}
+        </ul>
       ) : (
         <ResultList questions={questions} userAnswers={userAnswers} />
       )}
-    </ul>
+    </>
   );
 }

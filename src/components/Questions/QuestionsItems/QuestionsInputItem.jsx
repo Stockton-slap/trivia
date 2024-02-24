@@ -59,7 +59,7 @@ export default function QuestionsInputItem({
   };
 
   return (
-    <li className="flex-center">
+    <li className="flex-center h-[500px] gap-[30px]">
       <div className="bg-gradient-question rounded-[30px] p-[12px]">
         <p className="text-white text-xs uppercase">
           Question {currentQuestion.id} of {questions.length}
@@ -72,7 +72,7 @@ export default function QuestionsInputItem({
           ref={ref}
           value={inputValue}
           onChange={handleAnswerChange}
-          className="border rounded-[10px] py-2 px-4 mt-[32px] focus:border-blue-500 focus:outline-none focus:ring focus:ring-blue-300 hover:bg-blue-500 hover:border-orange hover:text-blue duration-300"
+          className="border rounded-[10px] py-2 px-4 focus:border-blue-500 focus:outline-none focus:ring focus:ring-blue-300 hover:bg-blue-500 hover:border-orange hover:text-blue duration-300"
         />
         <button
           type="submit"
