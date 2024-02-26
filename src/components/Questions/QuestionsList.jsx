@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import ResultList from "../Results/ResultList";
 import QuestionsOptionsItem from "./QuestionsItems/QuestionsOptionsItem";
 import QuestionsInputItem from "./QuestionsItems/QuestionsInputItem";
-import QuestionsImageItem from "./QuestionsItems/QuestionsImageItem";
 
 export default function QuestionsList({
   questions,
@@ -44,18 +43,6 @@ export default function QuestionsList({
               setUserAnswers={setUserAnswers}
               userAnswers={userAnswers}
               setScore={setScore}
-              questions={questions}
-            />
-          );
-        case "image":
-          return (
-            <QuestionsImageItem
-              key={id}
-              handleNextQuestion={handleNextQuestion}
-              currentQuestion={currentQuestion}
-              setScore={setScore}
-              setUserAnswers={setUserAnswers}
-              userAnswers={userAnswers}
               questions={questions}
             />
           );

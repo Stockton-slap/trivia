@@ -11,7 +11,11 @@ export default function QuestionsOptionsItem({
   questions,
 }) {
   return (
-    <li className="flex-center h-[500px] gap-[30px]">
+    <li
+      className={`flex-center h-[500px] gap-[30px] ${
+        !currentQuestion.quote && "h-full"
+      }`}
+    >
       <div className="bg-gradient-question rounded-[30px] p-[12px]">
         <p className="text-white text-xs uppercase">
           Question {currentQuestion.id} of {questions.length}
