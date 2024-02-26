@@ -84,7 +84,7 @@ export default function QuestionsList({
     <>
       {hasMoreQuestions ? (
         <ul
-          className="mt-[40px] p-[40px] rounded-[10px] text-center bg-gradient-bg bg-cover"
+          className="mt-[40px] p-[40px] w-[1000px] rounded-[10px] text-center bg-gradient-bg bg-cover"
           style={{
             backgroundImage: backgroundImageUrl || "",
           }}

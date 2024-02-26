@@ -74,7 +74,13 @@ export default function QuestionHeadline({ questionItem, withAnswer = false }) {
         type === "image" && "items-center"
       }`}
     >
-      <h2 className={`${withAnswer ? "text-sm" : "text-base"}`}>{question}</h2>
+      <h2
+        className={`${withAnswer ? "text-sm" : "text-base"} ${
+          type === "image" && withAnswer && "mt-[20px]"
+        }`}
+      >
+        {question}
+      </h2>
 
       {renderHeadline}
     </div>

@@ -13,3 +13,19 @@
     @apply flex items-center justify-center flex-col;
   }
 }
+
+@keyframes leftright {
+  0% {
+    transform: translateX(0%);
+    left: 0%;
+  }
+
+  100% {
+    transform: translateX(-100%);
+    left: 100%;
+  }
+}
+
+.slide-out {
+  animation: leftright 5s infinite alternate ease-in-out;
+}

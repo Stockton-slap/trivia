@@ -260,8 +260,16 @@
       },
        {
       "id": "4",
-      "title": "Screenshots",
-      "questions": []
+      "title": "Music & Soundtracks",
+      "questions": [
+            {
+                "id": "1",
+                "question": "Which movie does this OST belong to?",
+                "answers": [{"id": "1", "answer": "3:10 to Yuma", "isCorrect": false}, {"id": "2", "answer": "From Dusk till Dawn", "isCorrect": false}, {"id": "3", "answer": "Robin Hood", "isCorrect": false}, {"id": "4", "answer": "The Mask of Zorro", "isCorrect": true}],
+                "img": "",
+                "type": "music"
+            }
+      ]
       },
        {
       "id": "5",
