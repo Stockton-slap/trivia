@@ -5,7 +5,7 @@ import QuestionInputHeadlineList from "./QuestionInputHeadlineList";
 export default function Headlines({ questionItem, withAnswer }) {
   const { type } = questionItem;
 
-  const renderHeadlineType = () => {
+  const renderHeadline = (() => {
     switch (type) {
       case "options":
         return (
@@ -24,11 +24,10 @@ export default function Headlines({ questionItem, withAnswer }) {
             </div>
           )
         );
+
       default:
     }
-  };
-
-  const renderHeadline = renderHeadlineType();
+  })();
 
   return renderHeadline;
 }

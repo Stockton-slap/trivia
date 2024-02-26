@@ -297,7 +297,80 @@
                 "question": "Which movie does this OST belong to?",
                 "answers": [{"id": "1", "answer": "3:10 to Yuma", "isCorrect": false}, {"id": "2", "answer": "From Dusk till Dawn", "isCorrect": false}, {"id": "3", "answer": "Robin Hood", "isCorrect": false}, {"id": "4", "answer": "The Mask of Zorro", "isCorrect": true}],
                 "img": "",
-                "type": "music"
+                "type": "options",
+                "category": "ost"
+            },
+             {
+                "id": "2",
+                "question": "Which movie does this OST belong to?",
+                "answers": [{"id": "1", "answer": "3:10 to Yuma", "isCorrect": false}, {"id": "2", "answer": "From Dusk till Dawn", "isCorrect": false}, {"id": "3", "answer": "Robin Hood", "isCorrect": false}, {"id": "4", "answer": "The Mask of Zorro", "isCorrect": true}],
+                "img": "",
+                "type": "options",
+                "category": "ost"
+            },
+             {
+                "id": "3",
+                "question": "Which movie does this OST belong to?",
+                "answers": [{"id": "1", "answer": "3:10 to Yuma", "isCorrect": false}, {"id": "2", "answer": "From Dusk till Dawn", "isCorrect": false}, {"id": "3", "answer": "Robin Hood", "isCorrect": false}, {"id": "4", "answer": "The Mask of Zorro", "isCorrect": true}],
+                "img": "",
+                "type": "options",
+                "category": "ost"
+            },
+             {
+                "id": "4",
+                "question": "Which movie does this OST belong to?",
+                "answers": [{"id": "1", "answer": "3:10 to Yuma", "isCorrect": false}, {"id": "2", "answer": "From Dusk till Dawn", "isCorrect": false}, {"id": "3", "answer": "Robin Hood", "isCorrect": false}, {"id": "4", "answer": "The Mask of Zorro", "isCorrect": true}],
+                "img": "",
+                "type": "options",
+                "category": "ost"
+            },
+             {
+                "id": "5",
+                "question": "Which movie does this OST belong to?",
+                "answers": [{"id": "1", "answer": "3:10 to Yuma", "isCorrect": false}, {"id": "2", "answer": "From Dusk till Dawn", "isCorrect": false}, {"id": "3", "answer": "Robin Hood", "isCorrect": false}, {"id": "4", "answer": "The Mask of Zorro", "isCorrect": true}],
+                "img": "",
+                "type": "options",
+                "category": "ost"
+            },
+             {
+                "id": "6",
+                "question": "Which movie does this OST belong to?",
+                "answers": [{"id": "1", "answer": "3:10 to Yuma", "isCorrect": false}, {"id": "2", "answer": "From Dusk till Dawn", "isCorrect": false}, {"id": "3", "answer": "Robin Hood", "isCorrect": false}, {"id": "4", "answer": "The Mask of Zorro", "isCorrect": true}],
+                "img": "",
+                "type": "options",
+                "category": "ost"
+            },
+             {
+                "id": "7",
+                "question": "Which movie does this OST belong to?",
+                "answers": [{"id": "1", "answer": "3:10 to Yuma", "isCorrect": false}, {"id": "2", "answer": "From Dusk till Dawn", "isCorrect": false}, {"id": "3", "answer": "Robin Hood", "isCorrect": false}, {"id": "4", "answer": "The Mask of Zorro", "isCorrect": true}],
+                "img": "",
+                "type": "options",
+                "category": "ost"
+            },
+             {
+                "id": "8",
+                "question": "Which movie does this OST belong to?",
+                "answers": [{"id": "1", "answer": "3:10 to Yuma", "isCorrect": false}, {"id": "2", "answer": "From Dusk till Dawn", "isCorrect": false}, {"id": "3", "answer": "Robin Hood", "isCorrect": false}, {"id": "4", "answer": "The Mask of Zorro", "isCorrect": true}],
+                "img": "",
+                "type": "options",
+                "category": "ost"
+            },
+             {
+                "id": "9",
+                "question": "Which movie does this OST belong to?",
+                "answers": [{"id": "1", "answer": "3:10 to Yuma", "isCorrect": false}, {"id": "2", "answer": "From Dusk till Dawn", "isCorrect": false}, {"id": "3", "answer": "Robin Hood", "isCorrect": false}, {"id": "4", "answer": "The Mask of Zorro", "isCorrect": true}],
+                "img": "",
+                "type": "options",
+                "category": "ost"
+            },
+             {
+                "id": "10",
+                "question": "Which movie does this OST belong to?",
+                "answers": [{"id": "1", "answer": "3:10 to Yuma", "isCorrect": false}, {"id": "2", "answer": "From Dusk till Dawn", "isCorrect": false}, {"id": "3", "answer": "Robin Hood", "isCorrect": false}, {"id": "4", "answer": "The Mask of Zorro", "isCorrect": true}],
+                "img": "",
+                "type": "options",
+                "category": "ost"
             }
       ]
       },

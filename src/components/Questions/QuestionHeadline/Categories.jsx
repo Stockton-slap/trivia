@@ -7,9 +7,10 @@ export default function Categories({ questionItem, withAnswer }) {
   const imagePath = `/images/screenshots/${img1}.jpeg`;
   const imagePath2 = `/images/screenshots/${img2}.jpeg`;
 
-  const renderCategoryContent = () => {
+  const renderCategory = (() => {
     switch (category) {
       case "quotes":
+      case "trivia":
         return (
           <p
             className={`mt-[8px] font-semibold italic ${
@@ -42,15 +43,13 @@ export default function Categories({ questionItem, withAnswer }) {
             )}
           </div>
         );
-      case "trivia":
+      case "ost":
         return;
 
       default:
         break;
     }
-  };
-
-  const renderCategory = renderCategoryContent();
+  })();
 
   return renderCategory;
 }
