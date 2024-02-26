@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function QuestionHeadlineItem({ item, index, withAnswer }) {
+export default function QuestionInputHeadlineItem({ item, index, withAnswer }) {
   const isCharacterI = item.startsWith("Character I:");
   const isCharacterII = item.startsWith("Character II:");
   const isDialogue = isCharacterI || isCharacterII;

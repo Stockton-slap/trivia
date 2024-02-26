@@ -10,15 +10,13 @@ export default function QuestionsOptionsItem({
   userAnswers,
   questions,
 }) {
+  const { id } = currentQuestion;
+
   return (
-    <li
-      className={`flex-center h-[500px] gap-[30px] ${
-        !currentQuestion.quote && "h-full"
-      }`}
-    >
+    <li className={`flex-center h-full gap-[30px]`}>
       <div className="bg-gradient-question rounded-[30px] p-[12px]">
         <p className="text-white text-xs uppercase">
-          Question {currentQuestion.id} of {questions.length}
+          Question {id} of {questions.length}
         </p>
       </div>
       <QuestionHeadline questionItem={currentQuestion} />

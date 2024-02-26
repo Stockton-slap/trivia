@@ -1,11 +1,11 @@
 import React from "react";
-import QuestionHeadlineItem from "./QuestionHeadlineItem";
+import QuestionInputHeadlineItem from "./QuestionInputHeadlineItem";
 
-export default function QuestionHeadlineList({ quote, withAnswer }) {
+export default function QuestionInputHeadlineList({ quote, withAnswer }) {
   return (
     <ul className="mt-[8px]">
       {quote.map((item, index) => (
-        <QuestionHeadlineItem
+        <QuestionInputHeadlineItem
           key={index}
           item={item}
           index={index}
