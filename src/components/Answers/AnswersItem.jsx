@@ -21,7 +21,7 @@ export default function AnswersItem({
       onClick={onAnswerClick}
     >
       <div
-        className={`p-[16px] w-full bg-white rounded-[10px] border-[1px] group-hover:border-[1px] group-hover:border-hoverAnswer group-hover:m-[-1px] transition-all ease-in-out duration-300`}
+        className={`p-[16px] w-full bg-white rounded-[10px] border-[1px] group-hover:border-hoverAnswer  transition-all ease-in-out duration-500`}
         style={{
           whiteSpace: "nowrap",
           overflow: "hidden",
@@ -34,7 +34,7 @@ export default function AnswersItem({
           className={`flex items-center gap-[24px] overflow-hidden w-full`}
         >
           <div
-            className={`bg-gradient-btn text-white px-[20px] py-[12px] rounded-[10px] flex items-center justify-center text-sm font-bold group-hover:bg-gradient-btn-hover group-hover:scale-90`}
+            className={`bg-gradient-btn text-white px-[20px] py-[12px] rounded-[10px] flex items-center justify-center text-sm font-bold duration-500 group-hover:bg-gradient-btn-hover group-hover:scale-90`}
           >
             {letter}
           </div>

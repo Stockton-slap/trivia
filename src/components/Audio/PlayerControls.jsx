@@ -64,12 +64,10 @@ export default function PlayerControls({
   return (
     <div className="bg-gray-50  rounded-b-xl py-10">
       <div className="mb-8 flex gap-x-10 px-10">
-        {/* duration: time played  */}
         <div className="text-xs text-gray-600">
           <Durations seconds={duration * played} />
         </div>
 
-        {/* progress bar */}
         <div className="flex-1 mx-auto">
           <input
             type="range"
@@ -83,14 +81,13 @@ export default function PlayerControls({
             className="w-full h-4 rounded-lg appearance-none  bg-slate-400 accent-gray-900 focus:outline focus:outline-cyan-500 "
           />
         </div>
-        {/* duration: time left */}
+
         <div className="text-xs text-gray-600 flex">
           -<Durations seconds={duration * (1 - played)} />
         </div>
       </div>
 
       <div className="grid grid-cols-3 items-center ">
-        {/* loop button */}
         <div className="flex justify-center">
           <button
             className={`focus:outline focus:outline-cyan-500 font-bold hover:bg-gray-200 ${
@@ -102,7 +99,6 @@ export default function PlayerControls({
           </button>
         </div>
 
-        {/* play/pause button */}
         <div className="flex justify-center">
           <button
             ref={playPauseButtonRef}
@@ -113,9 +109,7 @@ export default function PlayerControls({
           </button>
         </div>
 
-        {/* volume control */}
         <div className="flex justify-center items-center gap-1">
-          {/* mute button */}
           <button
             className="focus:outline focus:outline-cyan-500"
             onClick={toggleMute}
@@ -123,7 +117,6 @@ export default function PlayerControls({
             {muted ? <VscMute /> : <VscUnmute />}
           </button>
 
-          {/* volume slider */}
           <input
             type="range"
             className="focus:outline focus:outline-cyan-500 w-[50%] h-2 rounded-lg  bg-slate-400 accent-gray-900"

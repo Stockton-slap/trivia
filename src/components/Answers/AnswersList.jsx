@@ -35,7 +35,7 @@ export default function AnswersList({
   const getItemColor = (answerId) => {
     if (selectedAnswerId === null) return "bg-bg";
     return selectedAnswerId === answerId
-      ? "border-[1px] m-[-1px]"
+      ? "border-[1px] m-[-1px] border-blue"
       : "opacity-[0.7]";
   };
 
