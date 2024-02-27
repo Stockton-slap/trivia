@@ -494,8 +494,99 @@
       },
        {
       "id": "6",
-      "title": "Screenshots",
-      "questions": []
+      "title": "Excerpts",
+      "questions": [
+            {
+                "id": "1",
+                "question": "Guess the movie by its short excerpt.",
+                "answers": [{"id": "1", "answer": "Great Gatsby", "isCorrect": false}, {"id": "2", "answer": "The Wolf of Wall-Street", "isCorrect": false}, {"id": "3", "answer": "Iron Man", "isCorrect": false}, {"id": "4", "answer": "American Psycho", "isCorrect": true}],
+                "mp3": "psycho",
+                "mp4": "psycho",
+                "type": "options",
+                "category": "excerpts"
+            },
+              {
+                "id": "2",
+                "question": "Guess the movie by its short excerpt.",
+                "answers": [{"id": "1", "answer": "Running Man", "isCorrect": false}, {"id": "2", "answer": "Commandos", "isCorrect": false}, {"id": "3", "answer": "Rambo", "isCorrect": false}, {"id": "4", "answer": "Die Hard", "isCorrect": true}],
+                "mp3": "dieHard",
+                "mp4": "dieHard",
+                "type": "options",
+                "category": "excerpts"
+            },
+              {
+                "id": "3",
+                "question": "Guess the movie by its short excerpt.",
+                "answers": [{"id": "1", "answer": "Jay and Silent Bob Strike Back", "isCorrect": false}, {"id": "2", "answer": "American Pie", "isCorrect": false}, {"id": "3", "answer": "Trainspotting", "isCorrect": false}, {"id": "4", "answer": "8 Mile", "isCorrect": true}],
+                "mp3": "mile",
+                "mp4": "mile",
+                "type": "options",
+                "category": "excerpts"
+            },
+              {
+                "id": "4",
+                "question": "Guess the movie by its short excerpt.",
+                "answers": [{"id": "1", "answer": "Scent of a Woman", "isCorrect": false}, {"id": "2", "answer": "Goodfellas", "isCorrect": false}, {"id": "3", "answer": "unknown", "isCorrect": false}, {"id": "4", "answer": "Good Will Hunting", "isCorrect": true}],
+                "mp3": "hunting",
+                "mp4": "hunting",
+                "type": "options",
+                "category": "excerpts"
+            },
+              {
+                "id": "5",
+                "question": "Guess the movie by its short excerpt.",
+                "answers": [{"id": "1", "answer": "unknown", "isCorrect": false}, {"id": "2", "answer": "unknown", "isCorrect": false}, {"id": "3", "answer": "unknown", "isCorrect": false}, {"id": "4", "answer": "Big Lebowski", "isCorrect": true}],
+                "mp3": "lebowski",
+                "mp4": "lebowski",
+                "type": "options",
+                "category": "excerpts"
+            },
+               {
+                "id": "6",
+                "question": "Guess the movie by its short excerpt.",
+                "answers": [{"id": "1", "answer": "unknown", "isCorrect": false}, {"id": "2", "answer": "unknown", "isCorrect": false}, {"id": "3", "answer": "unknown", "isCorrect": false}, {"id": "4", "answer": "Gangs of New York", "isCorrect": true}],
+                "mp3": "gangs",
+                "mp4": "gangs",
+                "type": "options",
+                "category": "excerpts"
+            },
+              {
+                "id": "7",
+                "question": "Guess the movie by its short excerpt.",
+                "answers": [{"id": "1", "answer": "Max Payne", "isCorrect": false}, {"id": "2", "answer": "Watchmen", "isCorrect": false}, {"id": "3", "answer": "Hitman", "isCorrect": false}, {"id": "4", "answer": "Sin City", "isCorrect": true}],
+                "mp3": "sinCity",
+                "mp4": "sinCity",
+                "type": "options",
+                "category": "excerpts"
+            },
+              {
+                "id": "8",
+                "question": "Guess the movie by its short excerpt.",
+                "answers": [{"id": "1", "answer": "Yesman", "isCorrect": false}, {"id": "2", "answer": "Ace Ventura: Pet Detective", "isCorrect": false}, {"id": "3", "answer": "Me, Myself & Irene", "isCorrect": false}, {"id": "4", "answer": "Liar, Liar", "isCorrect": true}],
+                "mp3": "liar",
+                "mp4": "liar",
+                "type": "options",
+                "category": "excerpts"
+            },
+              {
+                "id": "9",
+                "question": "Guess the movie by its short excerpt.",
+                "answers": [{"id": "1", "answer": "unknown", "isCorrect": false}, {"id": "2", "answer": "unknown", "isCorrect": false}, {"id": "3", "answer": "unknown", "isCorrect": false}, {"id": "4", "answer": "True Detective", "isCorrect": true}],
+                "mp3": "detective",
+                "mp4": "detective",
+                "type": "options",
+                "category": "excerpts"
+            },
+              {
+                "id": "10",
+                "question": "Guess the movie by its short excerpt.",
+                "answers": [{"id": "1", "answer": "The Bridge to Terabithia", "isCorrect": false}, {"id": "2", "answer": "unknown", "isCorrect": false}, {"id": "3", "answer": "unknown", "isCorrect": false}, {"id": "4", "answer": "Lovely Bones", "isCorrect": true}],
+                "mp3": "bones",
+                "mp4": "bones",
+                "type": "options",
+                "category": "excerpts"
+            }
+      ]
       },
        {
       "id": "7",

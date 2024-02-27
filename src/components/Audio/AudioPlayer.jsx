@@ -41,7 +41,7 @@ export default function AudioPlayer({ url, coverDefaultImage, songName }) {
   const toggleLoop = () => {
     setLoop((prevLoop) => !prevLoop);
   };
-
+  console.log(playerRef);
   return (
     <div className="border-[1px] mt-[30px] rounded-[10px]">
       <ReactPlayer

@@ -5,8 +5,18 @@ import AudioPlayer from "../../Audio/AudioPlayer";
 export default function Categories({ questionItem, withAnswer }) {
   const { quote, img1, img2, category, mp3, songName } = questionItem;
 
-  const url = `/media/mp3/ost/${mp3}.mp3`;
-  const coverDefaultImage = `/images/ost/${withAnswer ? mp3 : "default"}.jpeg`;
+  const coverDefaultImage = `/images/${withAnswer ? mp3 : "default"}.jpeg`;
+
+  let songUrl;
+
+  if (questionItem && mp3) {
+    if (category === "ost") {
+      songUrl = `/media/mp3/ost/${mp3}.mp3`;
+    }
+    if (category === "excerpts") {
+      songUrl = `/media/mp3/excerpts/${mp3}.mp3`;
+    }
+  }
 
   const renderCategory = (() => {
     switch (category) {
@@ -49,9 +59,16 @@ export default function Categories({ questionItem, withAnswer }) {
         );
 
       case "ost":
-        return (
+      case "excerpts":
+        return withAnswer ? (
           <AudioPlayer
-            url={url}
+            url={songUrl}
+            songName={songName}
+            coverDefaultImage={coverDefaultImage}
+          />
+        ) : (
+          <AudioPlayer
+            url={songUrl}
             songName={songName}
             coverDefaultImage={coverDefaultImage}
           />
