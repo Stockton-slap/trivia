@@ -1,11 +1,11 @@
 import React from "react";
 
-export default function AudioDetails({ coverDefaultImage, songName }) {
+export default function MediaDetails({ coverImage, songName }) {
   return (
     <div className="bg-gray-800 rounded-t-xl px-5 mt-8 flex-center">
       <div className="flex space-x-4">
         <img
-          src={coverDefaultImage}
+          src={coverImage}
           alt="Musical instruments"
           width="200"
           height="200"

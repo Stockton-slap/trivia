@@ -2,17 +2,24 @@ import React, { useState } from "react";
 import ReactPlayer from "react-player";
 import { useRef } from "react";
 import PlayerControls from "./PlayerControls";
-import AudioDetails from "./AudioDetails";
+import MediaDetails from "./MediaDetails";
 
-export default function AudioPlayer({ url, coverDefaultImage, songName }) {
+export default function MediaPlayer({
+  songUrl,
+  videoUrl,
+  coverImage,
+  songName,
+  withAnswer,
+}) {
   const [playing, setPlaying] = useState(false);
   const [muted, setMuted] = useState(false);
   const [volume, setVolume] = useState(0.5);
   const [progress, setProgress] = useState(0);
   const [loop, setLoop] = useState(false);
   const [duration, setDuration] = useState(0);
-
   const playerRef = useRef(null);
+
+  const defaultVideoImag = "/images/defaultVideoImage.jpeg";
 
   const handlePlay = () => {
     setPlaying(true);
@@ -41,12 +48,12 @@ export default function AudioPlayer({ url, coverDefaultImage, songName }) {
   const toggleLoop = () => {
     setLoop((prevLoop) => !prevLoop);
   };
-  console.log(playerRef);
+
   return (
-    <div className="border-[1px] mt-[30px] rounded-[10px]">
+    <div className="border-[1px] mt-[30px] rounded-[10px] overflow-hidden">
       <ReactPlayer
         ref={playerRef}
-        url={url}
+        url={withAnswer ? videoUrl : songUrl}
         playing={playing}
         volume={volume}
         muted={muted}
@@ -55,10 +62,15 @@ export default function AudioPlayer({ url, coverDefaultImage, songName }) {
         onPause={handlePause}
         onProgress={handleProgress}
         onDuration={handleDuration}
-        width={0}
-        height={0}
+        width={withAnswer ? "" : 0}
+        height={withAnswer ? "" : 0}
+        light={withAnswer && <img src={defaultVideoImag} alt="Thumbnail" />}
       />
-      <AudioDetails coverDefaultImage={coverDefaultImage} songName={songName} />
+
+      {!withAnswer && (
+        <MediaDetails coverImage={coverImage} songName={songName} />
+      )}
+
       <PlayerControls
         playerRef={playerRef}
         playing={playing}

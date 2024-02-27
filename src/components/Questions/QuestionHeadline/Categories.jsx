@@ -1,22 +1,9 @@
 import React from "react";
 import Image from "../../common/Image";
-import AudioPlayer from "../../Audio/AudioPlayer";
+import MediaPlayer from "../../Audio/MediaPlayer";
 
 export default function Categories({ questionItem, withAnswer }) {
-  const { quote, img1, img2, category, mp3, songName } = questionItem;
-
-  const coverDefaultImage = `/images/${withAnswer ? mp3 : "default"}.jpeg`;
-
-  let songUrl;
-
-  if (questionItem && mp3) {
-    if (category === "ost") {
-      songUrl = `/media/mp3/ost/${mp3}.mp3`;
-    }
-    if (category === "excerpts") {
-      songUrl = `/media/mp3/excerpts/${mp3}.mp3`;
-    }
-  }
+  const { quote, img1, img2, category, media, songName } = questionItem;
 
   const renderCategory = (() => {
     switch (category) {
@@ -58,19 +45,29 @@ export default function Categories({ questionItem, withAnswer }) {
           </div>
         );
 
-      case "ost":
       case "excerpts":
-        return withAnswer ? (
-          <AudioPlayer
-            url={songUrl}
+      case "ost":
+        const coverImage = `/images/${
+          withAnswer ? `ost/${media}` : "defaultAudioImage"
+        }.jpeg`;
+        const videoUrl = `/media/video/excerpts/${media}.mp4`;
+        let songUrl;
+        if (questionItem && media) {
+          if (category === "ost") {
+            songUrl = `/media/mp3/ost/${media}.mp3`;
+          }
+          if (category === "excerpts") {
+            songUrl = `/media/mp3/excerpts/${media}.mp3`;
+          }
+        }
+
+        return (
+          <MediaPlayer
+            songUrl={songUrl}
             songName={songName}
-            coverDefaultImage={coverDefaultImage}
-          />
-        ) : (
-          <AudioPlayer
-            url={songUrl}
-            songName={songName}
-            coverDefaultImage={coverDefaultImage}
+            coverImage={coverImage}
+            videoUrl={videoUrl}
+            withAnswer={withAnswer}
           />
         );
 

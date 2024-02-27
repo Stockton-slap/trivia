@@ -40,15 +40,3 @@ export default function Headlines({ questionItem, withAnswer }) {
 
   return renderHeadline;
 }
-
-// case "emojis":
-//         const emojisImagePath = `/images/emojis/${img}.jpeg`;
-
-//         return (
-//           withAnswer && (
-//             <Image
-//               imagePath={emojisImagePath}
-//               className="w-[600px] h-[300px] object-cover"
-//             />
-//           )
-//         );
