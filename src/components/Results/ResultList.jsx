@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import ResultItem from "./ResultItem";
 import { Link } from "react-router-dom";
 
 export default function ResultList({ questions, userAnswers }) {
+  useEffect(() => {
+    window.scrollTo({ top: 0 });
+  }, []);
+
   return (
     <>
       <div className="flex-center">

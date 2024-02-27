@@ -60,9 +60,10 @@ export default function QuestionsList({
   let backgroundImageUrl;
 
   if (currentQuestion && currentQuestion.img) {
-    if (currentQuestion.quote) {
+    if (currentQuestion.category === "quotes") {
       backgroundImageUrl = `url(/images/quotes/${currentQuestion.img}.jpeg)`;
-    } else {
+    }
+    if (currentQuestion.category === "trivia") {
       backgroundImageUrl = `url(/images/trivia/${currentQuestion.img}.jpeg)`;
     }
   }
