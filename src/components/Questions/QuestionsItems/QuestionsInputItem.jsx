@@ -66,6 +66,7 @@ export default function QuestionsInputItem({
         </p>
       </div>
       <QuestionHeadline questionItem={currentQuestion} />
+
       <form onSubmit={handleAnswerSubmit} className="flex-center">
         <input
           type="text"

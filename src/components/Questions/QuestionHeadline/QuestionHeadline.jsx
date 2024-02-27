@@ -7,7 +7,7 @@ export default function QuestionHeadline({ questionItem, withAnswer = false }) {
   const { question } = questionItem;
 
   return (
-    <div className={`${withAnswer && "flex flex-col flex-start"} `}>
+    <div className={`${withAnswer && "flex flex-col flex-start"} text-center`}>
       <h2
         className={`${withAnswer ? "text-sm" : "text-base"} ${
           withAnswer && "mt-[20px]"

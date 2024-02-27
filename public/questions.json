@@ -396,10 +396,101 @@
             }
       ]
       },
-       {
-      "id": "5",
-      "title": "Screenshots",
-      "questions": []
+      {   
+            "id": "5",
+            "title": "Movies by Emojis",
+            "questions": [
+             {
+               "id": "1",
+               "question": "Guess the movie/tv series/cartoon by the emojis.",
+               "quote": "👗 👗 ✨ 🏨 👻 🚪",
+               "answer": ["Shining", "the shining"],
+               "type": "input",
+               "img": "shining",
+               "category": "emojis"
+            },
+              {
+               "id": "2",
+               "question": "Guess the movie/tv series/cartoon by the emojis.",
+               "quote": "📓 📝 🏠 👩‍❤️‍👨",
+               "answer": ["Notebook", "the notebook"],
+               "type": "input",
+               "img": "notebook",
+               "category": "emojis"
+            },
+              {
+               "id": "3",
+               "question": "Guess the movie/tv series/cartoon by the emojis.",
+               "quote": "👳🏾‍♀️ 🚣🏾 🐅 🏝️ 🌊",
+               "answer": ["Life of Pi"],
+               "type": "input",
+               "img": "pi",
+               "category": "emojis"
+            },
+              {
+               "id": "4",
+               "question": "Guess the movie/tv series/cartoon by the emojis.",
+               "quote": "🤴🏻 🗣️ 💬",
+               "answer": ["King's Speech", "kings speech", "king speech", "the kings speech", "the kings speech", "the king's speech"],
+               "type": "input",
+               "img": "speech",
+               "category": "emojis"
+            },
+              {
+               "id": "5",
+               "question": "Guess the movie/tv series/cartoon by the emojis.",
+               "quote": "👴🏻 🏠 🎈 🎈 🎈 👆🏻",
+               "answer": ["Up"],
+               "type": "input",
+               "img": "up",
+               "category": "emojis"
+            },
+              {
+               "id": "6",
+               "question": "Guess the movie/tv series/cartoon by the emojis.",
+               "quote": "🕯️ 🏡 👩‍👧‍👦 👻 🚪",
+               "answer": ["Others", "the others"],
+               "type": "input",
+               "img": "others",
+               "category": "emojis"
+            },
+              {
+               "id": "7",
+               "question": "Guess the movie/tv series/cartoon by the emojis.",
+               "quote": "🔪 🌊 🛥️ 👨‍⚕️ 💉 🩸",
+               "answer": ["Dexter"],
+               "type": "input",
+               "img": "dexter",
+               "category": "emojis"
+            },
+              {
+               "id": "8",
+               "question": "Guess the movie/tv series/cartoon by the emojis.",
+               "quote": "🕵️‍♂️ 🦜 🐬 🦏 🏈",
+               "answer": ["Ace Ventura"],
+               "type": "input",
+               "img": "ace",
+               "category": "emojis"
+            },
+              {
+               "id": "9",
+               "question": "Guess the movie/tv series/cartoon by the emojis.",
+               "quote": "🍻 🥃 🚔 💍 🐅 🥊 🦷",
+               "answer": ["Hangover", "the hangover"],
+               "type": "input",
+               "img": "hangover",
+               "category": "emojis"
+            },
+              {
+               "id": "10",
+               "question": "Guess the movie/tv series/cartoon by the emojis.",
+               "quote": "💉 🚬 💊 👨🏻‍🤝‍👨🏼 👬🏻 🏴󠁧󠁢󠁳󠁣󠁴󠁿",
+               "answer": ["Trainspotting", "the trainspotting", "trainspoting", "the trainspoting"],
+               "type": "input",
+               "img": "trainspotting",
+               "category": "emojis"
+            }
+      ]
       },
        {
       "id": "6",

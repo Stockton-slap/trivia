@@ -17,7 +17,7 @@ export default function QuestionsList({
 
   const currentQuestion = questions[currentQuestionIndex];
 
-  const renderQuestionsTypes = () => {
+  const renderedQuestions = (() => {
     if (currentQuestion) {
       const { type, id } = currentQuestion;
 
@@ -52,9 +52,8 @@ export default function QuestionsList({
     } else {
       return <div>Error: No current question found.</div>;
     }
-  };
+  })();
 
-  const renderedQuestions = renderQuestionsTypes();
   const hasMoreQuestions = currentQuestionIndex < questions.length;
 
   let backgroundImageUrl;

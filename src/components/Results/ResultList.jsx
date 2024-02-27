@@ -10,7 +10,7 @@ export default function ResultList({ questions, userAnswers }) {
   return (
     <>
       <div className="flex-center">
-        <ul className="flex-center mt-[40px] w-[1000px]">
+        <ul className="flex-center mt-[40px] w-[700px]">
           {questions.map((questionItem, index) => {
             return (
               <ResultItem

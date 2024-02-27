@@ -22,8 +22,8 @@ export default function Categories({ questionItem, withAnswer }) {
           </p>
         );
       case "screenshots":
-        const imagePath = `/images/screenshots/${img1}.jpeg`;
-        const imagePath2 = `/images/screenshots/${img2}.jpeg`;
+        const screenshotImagePath1 = `/images/screenshots/${img1}.jpeg`;
+        const screenshotImagePat2 = `/images/screenshots/${img2}.jpeg`;
 
         return (
           <div
@@ -34,19 +34,20 @@ export default function Categories({ questionItem, withAnswer }) {
             }`}
           >
             <Image
-              imagePath={imagePath}
+              imagePath={screenshotImagePath1}
               className={`w-[600px] h-[300px] ${
                 withAnswer ? "object-cover" : ""
               }`}
             />
             {withAnswer && (
               <Image
-                imagePath={imagePath2}
+                imagePath={screenshotImagePat2}
                 className="w-[600px] h-[300px] object-cover"
               />
             )}
           </div>
         );
+
       case "ost":
         return (
           <AudioPlayer

@@ -5,7 +5,7 @@ export default function ResultItem({ index, userAnswers, questionItem }) {
   const notFirstItem = index !== 0;
   const userAnswer = userAnswers[index].answer;
 
-  const { quote, answers, type, answer } = questionItem;
+  const { quote, answers, type, answer, category } = questionItem;
 
   const isAnswerCorrect = useMemo(() => {
     switch (type) {
@@ -22,9 +22,16 @@ export default function ResultItem({ index, userAnswers, questionItem }) {
     }
   }, [answer, answers, type, userAnswer]);
 
+  const formattedAnswer =
+    category === "quotes"
+      ? quote.replace("....", answer[0])
+      : category === "emojis"
+      ? answer[0]
+      : null;
+
   const correctAnswer =
     type === "input"
-      ? quote.replace("....", answer[0])
+      ? formattedAnswer
       : answers.find(({ isCorrect }) => isCorrect).answer;
 
   const isCharacterI = correctAnswer.startsWith("Character I:");
@@ -34,7 +41,7 @@ export default function ResultItem({ index, userAnswers, questionItem }) {
 
   return (
     <li
-      className={`w-full ${
+      className={`w-full flex-center ${
         notFirstItem && "mt-[40px]"
       } border-[1px] border-black overflow-hidden p-[8px] rounded-[10px]`}
     >
@@ -47,16 +54,14 @@ export default function ResultItem({ index, userAnswers, questionItem }) {
       <QuestionHeadline questionItem={questionItem} withAnswer />
 
       <div className="flex items-baseline gap-[10px]">
-        <p className="mt-[10px] text-grey font-bold text-xs w-[130px]  text-left">
+        <p className="mt-[10px] text-grey font-bold text-xs text-left">
           Your answer:
         </p>
         <span className="text-grey">{userAnswer}</span>
       </div>
 
       <div className="flex items-baseline gap-[10px]">
-        <p className="font-bold text-green w-[130px]  text-left">
-          Correct answer:{" "}
-        </p>
+        <p className="font-bold text-green text-left">Correct answer: </p>
         {isDialogue ? (
           <ul>
             {splitQuote.map((quote, quoteIndex) => {
