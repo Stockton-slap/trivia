@@ -24,7 +24,9 @@ export default function ResultItem({ index, userAnswers, questionItem }) {
 
   const formattedAnswer =
     category === "quotes"
-      ? quote.replace("....", answer[0])
+      ? type === "input"
+        ? quote.replace("....", answer[0])
+        : quote
       : category === "emojis"
       ? answer[0]
       : null;

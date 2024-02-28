@@ -9,8 +9,6 @@ export default function QuestionInputHeadlineItem({
   const isDialogue =
     item.startsWith("Character I:") || item.startsWith("Character II:");
   const [character, dialogue] = item.split(":");
-  const isCategoryQuotes = category === "quotes";
-  const isCategoryEmojis = category === "emojis";
 
   return isDialogue ? (
     <li key={index} className="flex items-baseline">
@@ -20,12 +18,12 @@ export default function QuestionInputHeadlineItem({
   ) : (
     <li key={index}>
       <p
-        className={`text-sm ${isCategoryQuotes && "italic"} ${
-          isCategoryEmojis && "text-xl"
+        className={`text-sm ${category === "quotes" && "italic"} ${
+          category === "emojis" && "text-xl"
         } ${withAnswer ? "text-xs" : "text-sm"}`}
       >
-        {isCategoryQuotes && `"${item}"`}
-        {isCategoryEmojis && item}
+        {category === "quotes" && `"${item}"`}
+        {category === "emojis" && item}
       </p>
     </li>
   );

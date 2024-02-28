@@ -43,7 +43,7 @@ export default function QuestionCard() {
 
   return (
     <div className="bg-bg rounded-[10px] p-[20px] m-[20px] flex-center">
-      {matchup ? (
+      {/* {matchup ? (
         <div>
           <QuestionHeader
             score={score}
@@ -58,22 +58,22 @@ export default function QuestionCard() {
             matchup={matchup}
           />
         </div>
-      ) : (
-        <div className="flex-center">
-          <QuestionHeader
-            score={score}
-            questions={questions}
-            currentQuestionIndex={currentQuestionIndex}
-          />
-          <QuestionsList
-            questions={questions}
-            setScore={setScore}
-            currentQuestionIndex={currentQuestionIndex}
-            setCurrentQuestionIndex={setCurrentQuestionIndex}
-            matchup={matchup}
-          />
-        </div>
-      )}
+      ) : ( */}
+      <div className="flex-center">
+        <QuestionHeader
+          score={score}
+          questions={questions}
+          currentQuestionIndex={currentQuestionIndex}
+        />
+        <QuestionsList
+          questions={questions}
+          setScore={setScore}
+          currentQuestionIndex={currentQuestionIndex}
+          setCurrentQuestionIndex={setCurrentQuestionIndex}
+          matchup={matchup}
+        />
+      </div>
+      {/* )} */}
     </div>
   );
 }
