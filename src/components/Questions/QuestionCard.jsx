@@ -8,9 +8,11 @@ import LoaderSpinner from "../Loader/Loader";
 
 export default function QuestionCard() {
   const [questions, setQuestions] = useState([]);
-  const [error, setError] = useState("");
+  const [matchup, setMatchup] = useState(null);
   const [score, setScore] = useState(0);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
 
   const { roundId } = useParams();
 
@@ -18,33 +20,60 @@ export default function QuestionCard() {
     const fetchData = async () => {
       try {
         const response = await fetch("/questions.json");
-        const data = await response.json();
+        const { rounds } = await response.json();
+        const currentRound = rounds[roundId - 1];
 
-        setQuestions(data.rounds[roundId - 1].questions);
+        if (currentRound) {
+          setQuestions(currentRound.questions || []);
+          setMatchup(currentRound.matchup || null);
+        }
+
+        setLoading(false);
       } catch (e) {
-        setError("Request for question json was failed");
+        setError("Request for question json has failed.");
+        setLoading(false);
       }
     };
 
     fetchData();
   }, [roundId]);
 
+  if (loading) return <LoaderSpinner />;
   if (error) return <Error />;
-  if (questions.length === 0) return <LoaderSpinner />;
 
   return (
     <div className="bg-bg rounded-[10px] p-[20px] m-[20px] flex-center">
-      <QuestionHeader
-        score={score}
-        questions={questions}
-        currentQuestionIndex={currentQuestionIndex}
-      />
-      <QuestionsList
-        questions={questions}
-        setScore={setScore}
-        currentQuestionIndex={currentQuestionIndex}
-        setCurrentQuestionIndex={setCurrentQuestionIndex}
-      />
+      {matchup ? (
+        <div>
+          <QuestionHeader
+            score={score}
+            questions={questions}
+            currentQuestionIndex={currentQuestionIndex}
+          />
+          <QuestionsList
+            questions={questions}
+            setScore={setScore}
+            currentQuestionIndex={currentQuestionIndex}
+            setCurrentQuestionIndex={setCurrentQuestionIndex}
+            matchup={matchup}
+          />
+        </div>
+      ) : (
+        <div className="flex-center">
+          <QuestionHeader
+            score={score}
+            questions={questions}
+            currentQuestionIndex={currentQuestionIndex}
+          />
+          <QuestionsList
+            questions={questions}
+            setScore={setScore}
+            currentQuestionIndex={currentQuestionIndex}
+            setCurrentQuestionIndex={setCurrentQuestionIndex}
+            matchup={matchup}
+          />
+        </div>
+      )}
     </div>
   );
 }

@@ -8,6 +8,7 @@ export default function QuestionsList({
   setScore,
   currentQuestionIndex,
   setCurrentQuestionIndex,
+  matchup,
 }) {
   const [userAnswers, setUserAnswers] = useState([]);
 
@@ -34,6 +35,7 @@ export default function QuestionsList({
               questions={questions}
             />
           );
+
         case "input":
           return (
             <QuestionsInputItem
@@ -46,6 +48,11 @@ export default function QuestionsList({
               questions={questions}
             />
           );
+
+        // case "matchup":
+        //   console.log(matchup);
+        //   return <div>1</div>;
+
         default:
           return <div>Error: No current question found.</div>;
       }

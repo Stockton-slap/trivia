@@ -7,7 +7,7 @@ export default function QuestionHeader({
 }) {
   const evaluateAnswers =
     score < 4
-      ? "text-[red]"
+      ? "text-red"
       : score >= 4 && score < 8
       ? "text-grey"
       : "text-green";

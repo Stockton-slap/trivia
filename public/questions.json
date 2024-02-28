@@ -580,8 +580,15 @@
       },
        {
       "id": "7",
-      "title": "Screenshots",
-      "questions": []
+      "title": "Three-word Movies Match-up",
+      "matchup": {
+         "type": "matchup",
+         "question": "Can you correctly match the words from the buckets to form the title of a movie?",
+         "matchups": [
+            ["American", "History", "X"],
+            ["Unknown", "Test", "Word"]
+         ]
+      }
       },
        {
       "id": "8",

@@ -10,6 +10,7 @@ export default function MediaPlayer({
   coverImage,
   songName,
   withAnswer,
+  category,
 }) {
   const [playing, setPlaying] = useState(false);
   const [muted, setMuted] = useState(false);
@@ -19,7 +20,7 @@ export default function MediaPlayer({
   const [duration, setDuration] = useState(0);
   const playerRef = useRef(null);
 
-  const defaultVideoImag = "/images/defaultVideoImage.jpeg";
+  // const defaultVideoImag = "/images/defaultVideoImage.jpeg";
 
   const handlePlay = () => {
     setPlaying(true);
@@ -49,11 +50,17 @@ export default function MediaPlayer({
     setLoop((prevLoop) => !prevLoop);
   };
 
+  const urlToShow = withAnswer
+    ? category === "excerpts"
+      ? videoUrl
+      : category === "ost" && songUrl
+    : songUrl;
+
   return (
     <div className="border-[1px] mt-[30px] rounded-[10px] overflow-hidden">
       <ReactPlayer
         ref={playerRef}
-        url={withAnswer ? videoUrl : songUrl}
+        url={urlToShow}
         playing={playing}
         volume={volume}
         muted={muted}
@@ -64,12 +71,15 @@ export default function MediaPlayer({
         onDuration={handleDuration}
         width={withAnswer ? "" : 0}
         height={withAnswer ? "" : 0}
-        light={withAnswer && <img src={defaultVideoImag} alt="Thumbnail" />}
+        // light={withAnswer && <img src={defaultVideoImag} alt="Thumbnail" />}
       />
 
-      {!withAnswer && (
-        <MediaDetails coverImage={coverImage} songName={songName} />
-      )}
+      <MediaDetails
+        coverImage={coverImage}
+        songName={songName}
+        category={category}
+        withAnswer={withAnswer}
+      />
 
       <PlayerControls
         playerRef={playerRef}

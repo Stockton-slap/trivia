@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "../../common/Image";
-import MediaPlayer from "../../Audio/MediaPlayer";
+import MediaPlayer from "../../Media/MediaPlayer";
 
 export default function Categories({ questionItem, withAnswer }) {
   const { quote, img1, img2, category, media, songName } = questionItem;
@@ -47,9 +47,10 @@ export default function Categories({ questionItem, withAnswer }) {
 
       case "excerpts":
       case "ost":
-        const coverImage = `/images/${
-          withAnswer ? `ost/${media}` : "defaultAudioImage"
-        }.jpeg`;
+        const coverImage = withAnswer
+          ? `/images/ost/${media}.jpeg`
+          : "/images/defaultAudioImage.jpeg";
+
         const videoUrl = `/media/video/excerpts/${media}.mp4`;
         let songUrl;
         if (questionItem && media) {
@@ -68,6 +69,7 @@ export default function Categories({ questionItem, withAnswer }) {
             coverImage={coverImage}
             videoUrl={videoUrl}
             withAnswer={withAnswer}
+            category={category}
           />
         );
 

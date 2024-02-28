@@ -1,12 +1,21 @@
 import React from "react";
 
-export default function MediaDetails({ coverImage, songName }) {
+export default function MediaDetails({
+  coverImage,
+  songName,
+  category,
+  withAnswer,
+}) {
   return (
-    <div className="bg-gray-800 rounded-t-xl px-5 mt-8 flex-center">
+    <div
+      className={`bg-gray-800 rounded-t-xl px-5 mt-8 flex-center ${
+        withAnswer && category === "excerpts" && "hidden"
+      }`}
+    >
       <div className="flex space-x-4">
         <img
           src={coverImage}
-          alt="Musical instruments"
+          alt="Img"
           width="200"
           height="200"
           className="flex-none rounded-lg bg-gray-100"
