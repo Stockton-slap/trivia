@@ -1,4 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
+import BucketList from "./BucketList";
+import shuffledArray from "../../utils/shuffledArray";
 
 export default function Matchup({ matchup }) {
   const [choices, setChoices] = useState([]);
@@ -7,8 +9,12 @@ export default function Matchup({ matchup }) {
     bucket2: [],
     bucket3: [],
   });
+  const [currentChoice, setCurrentChoice] = useState([]);
 
   const { bucket1, bucket2, bucket3 } = buckets;
+  const randomizedBucket1 = useMemo(() => shuffledArray(bucket1), [bucket1]);
+  const randomizedBucket2 = useMemo(() => shuffledArray(bucket2), [bucket2]);
+  const randomizedBucket3 = useMemo(() => shuffledArray(bucket3), [bucket3]);
 
   useEffect(() => {
     const { matchups } = matchup;
@@ -32,7 +38,25 @@ export default function Matchup({ matchup }) {
     });
   }, [matchup]);
 
-  return <div></div>;
+  return (
+    <div className="flex justify-evenly gap-[30px]">
+      <BucketList
+        bucket={randomizedBucket1}
+        setCurrentChoice={setCurrentChoice}
+        currentChoice={currentChoice}
+      />
+      <BucketList
+        bucket={randomizedBucket2}
+        setCurrentChoice={setCurrentChoice}
+        currentChoice={currentChoice}
+      />
+      <BucketList
+        bucket={randomizedBucket3}
+        setCurrentChoice={setCurrentChoice}
+        currentChoice={currentChoice}
+      />
+    </div>
+  );
 }
 
 // export default function Matchup({ matchup }) {
