@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import ResultList from "../Results/ResultList";
 import QuestionsOptionsItem from "./QuestionsItems/QuestionsOptionsItem";
 import QuestionsInputItem from "./QuestionsItems/QuestionsInputItem";
+import Matchup from "../Matchup/Matchup";
 
 export default function QuestionsList({
   questions,
@@ -49,13 +50,11 @@ export default function QuestionsList({
             />
           );
 
-        // case "matchup":
-        //   console.log(matchup);
-        //   return <div>1</div>;
-
         default:
           return <div>Error: No current question found.</div>;
       }
+    } else if (matchup) {
+      return <Matchup matchup={matchup} />;
     } else {
       return <div>Error: No current question found.</div>;
     }
@@ -78,7 +77,7 @@ export default function QuestionsList({
 
   return (
     <>
-      {hasMoreQuestions ? (
+      {hasMoreQuestions || matchup ? (
         <ul
           className="mt-[40px] p-[40px] w-[1000px] rounded-[10px] text-center bg-gradient-bg bg-cover"
           style={{
