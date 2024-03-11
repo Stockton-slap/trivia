@@ -18,6 +18,7 @@ module.exports = {
       textColor: "#37003c",
       hoverAnswer: "#00bbff",
       grey: "#676767",
+      yellow: "#fff587",
     },
     fontSize: {
       xs: ["16px", "1.2"],

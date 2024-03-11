@@ -10,17 +10,17 @@ export default function BucketList({
   return (
     <ul className="border-[1px] rounded-[10px] p-[20px] flex flex-wrap gap-[10px] justify-center">
       {bucket.map((item, index) => {
-        const isChosen = correctChoices.includes(item);
+        const isAlreadyChosen = correctChoices.includes(item);
 
         return (
           <BucketItem
             item={item}
             key={index}
             handleBucketItemClick={() => {
-              if (!isChosen) return handleBucketItemClick(item);
+              if (!isAlreadyChosen) return handleBucketItemClick(item);
             }}
             isSelected={activeChoice === item}
-            isChosen={isChosen}
+            isAlreadyChosen={isAlreadyChosen}
           />
         );
       })}
