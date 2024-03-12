@@ -4,7 +4,7 @@ export default function BucketItem({
   item,
   handleBucketItemClick,
   isSelected,
-  isAlreadyChosen,
+  isCorrect,
 }) {
   return (
     <li>
@@ -12,7 +12,7 @@ export default function BucketItem({
         type="button"
         className={`px-4 py-2 bg-blue-500 text-white rounded-md border-[1px] ${
           isSelected ? "bg-yellow text-black border-yellow" : ""
-        } ${isAlreadyChosen ? "bg-green border-green" : ""}`}
+        } ${isCorrect ? "bg-green border-green" : ""}`}
         onClick={handleBucketItemClick}
       >
         {item}
