@@ -42,7 +42,11 @@ export default function QuestionCard() {
   if (error) return <Error />;
 
   return (
-    <div className="bg-bg rounded-[10px] p-[20px] m-[20px] flex-center">
+    <div
+      className={`bg-bg rounded-[10px] p-[20px] m-[20px] flex-center ${
+        matchup && "h-[100vh]"
+      }`}
+    >
       <div className="flex-center">
         <QuestionHeader
           score={score}

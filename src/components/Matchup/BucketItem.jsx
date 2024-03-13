@@ -14,8 +14,8 @@ export default function BucketItem({
         text={item}
         type="button"
         handleClick={handleBucketItemClick}
-        className={`transition-all ease-in-out duration-500 hover:bg-hovered hover:border-hovered px-4 py-2 bg-blue-500 text-white rounded-md border-[1px] ${
-          isSelected ? "bg-yellow text-black border-yellow" : ""
+        className={`transition-all ease-in-out duration-500 hover:bg-hovered hover:border-hovered px-4 py-2 bg-blue-500 rounded-md border-[1px] ${
+          isSelected ? "bg-yellow text-black border-yellow" : "text-white"
         } ${isCorrect ? "bg-green border-green" : ""} ${
           !isTimerAndGuessesValid && "bg-red border-red"
         }`}

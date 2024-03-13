@@ -1,7 +1,8 @@
-import React, { useEffect } from "react";
+import React from "react";
 import evaluateStats from "../../utils/evaluateStats";
 import { MdOutlineReplay } from "react-icons/md";
 import Button from "../common/Button";
+import Timer from "../Timer/Timer";
 
 export default function MatchupHeader({
   guesses,
@@ -14,24 +15,10 @@ export default function MatchupHeader({
   timer,
   setTimer,
 }) {
-  useEffect(() => {
-    const countdown = setInterval(() => {
-      if (isTimerAndGuessesValid) {
-        setTimer(timer - 1);
-      } else {
-        clearInterval(countdown);
-      }
-    }, 1000);
-
-    return () => clearInterval(countdown);
-  }, [timer, isTimerAndGuessesValid, setTimer]);
-
-  const minutes = Math.floor(timer / 60);
-  const seconds = timer % 60;
   const percentage = (correctAnswers / 20) * 100;
 
   const handleReplayClick = () => {
-    setTimer(5); // 300
+    setTimer(300);
     setGuesses(20);
     setCorrectChoices([]);
     setWrongAnswers(0);
@@ -75,13 +62,10 @@ export default function MatchupHeader({
       )}
       <div className="matchup-text-container">
         <p>SCORE</p>
-        <span className="text-lg">{correctAnswers}/20</span>
+        <span className="text-lg">{correctAnswers}/15</span>
       </div>
       <div className="matchup-text-container">
-        <p>TIMER</p>
-        <span className={`text-lg ${timer <= 60 && "text-red"}`}>{`${minutes}:${
-          seconds < 10 ? `0${seconds}` : seconds
-        }`}</span>
+        <Timer timer={timer} setTimer={setTimer} />
       </div>
       <div className="flex space-x-4"></div>
     </div>

@@ -4,18 +4,18 @@ import MatchupHeader from "./MatchupHeader";
 import useRandomize from "../../hooks/useRandomize";
 import useSortedChoicesByBucket from "../../hooks/useSortedChoicesByBucket";
 import Button from "../common/Button";
+import Popup from "../common/Popup";
 
 export default function Matchup({ matchup }) {
   const [bucket1, setBucket1] = useState(null);
   const [bucket2, setBucket2] = useState(null);
   const [bucket3, setBucket3] = useState(null);
   const [correctChoices, setCorrectChoices] = useState([]);
-  const [guesses, setGuesses] = useState(20);
+  const [guesses, setGuesses] = useState(15);
   const [wrongAnswers, setWrongAnswers] = useState(0);
   const [isStartCliked, setIsStartClicked] = useState(false);
-  const [timer, setTimer] = useState(5); // 300
-
-  const isTimerAndGuessesValid = timer > 0 && guesses > 0;
+  const [timer, setTimer] = useState(300);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const memoizedAllChoicesSortedByBucket = useSortedChoicesByBucket(
     matchup.matchups
@@ -25,10 +25,11 @@ export default function Matchup({ matchup }) {
   const { randomizedBucket1, randomizedBucket2, randomizedBucket3 } =
     useRandomize(memoizedAllChoicesSortedByBucket);
 
-  useEffect(() => {
-    const bucketsAreFull =
-      bucket1 !== null && bucket2 !== null && bucket3 !== null;
+  const isTimerAndGuessesValid = timer > 0 && guesses > 0;
+  const bucketsAreFull =
+    bucket1 !== null && bucket2 !== null && bucket3 !== null;
 
+  useEffect(() => {
     if (bucketsAreFull) {
       const { matchups } = matchup;
 
@@ -51,7 +52,12 @@ export default function Matchup({ matchup }) {
       setBucket2(null);
       setBucket3(null);
     }
-  }, [bucket1, bucket2, bucket3, correctChoices, matchup]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [bucketsAreFull, correctChoices, matchup]);
+
+  useEffect(() => {
+    if (correctChoices.length === matchup.matchups.length) setIsModalOpen(true);
+  }, [correctChoices.length, matchup.matchups.length]);
 
   const handleBucketItemClick = (choice, bucketIndex) => {
     if (bucketIndex === 1) {
@@ -100,13 +106,17 @@ export default function Matchup({ matchup }) {
           isTimerAndGuessesValid={isTimerAndGuessesValid}
         />
       </div>
+
+      {isModalOpen && (
+        <Popup isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
+      )}
     </>
   ) : (
     <Button
       handleClick={() => {
         setIsStartClicked(true);
       }}
-      className="btn"
+      className="btn bg-orange"
       text="Start Quiz"
       type="button"
     />
