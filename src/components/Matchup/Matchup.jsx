@@ -12,6 +12,9 @@ export default function Matchup({ matchup }) {
   const [guesses, setGuesses] = useState(20);
   const [wrongAnswers, setWrongAnswers] = useState(0);
   const [isStartCliked, setIsStartClicked] = useState(false);
+  const [timer, setTimer] = useState(5); // 300
+
+  const isTimerAndGuessesValid = timer > 0 && guesses > 0;
 
   const memoizedAllChoicesSortedByBucket = useSortedChoicesByBucket(
     matchup.matchups
@@ -68,6 +71,9 @@ export default function Matchup({ matchup }) {
         setGuesses={setGuesses}
         setCorrectChoices={setCorrectChoices}
         setWrongAnswers={setWrongAnswers}
+        isTimerAndGuessesValid={isTimerAndGuessesValid}
+        timer={timer}
+        setTimer={setTimer}
       />
 
       <div className="flex justify-evenly gap-[30px] mt-[30px]">
@@ -76,18 +82,21 @@ export default function Matchup({ matchup }) {
           handleBucketItemClick={(item) => handleBucketItemClick(item, 1)}
           correctChoices={memoizedCorrectChoicesSortedByBucket[0]}
           activeChoice={bucket1}
+          isTimerAndGuessesValid={isTimerAndGuessesValid}
         />
         <BucketList
           bucket={randomizedBucket2}
           handleBucketItemClick={(item) => handleBucketItemClick(item, 2)}
           correctChoices={memoizedCorrectChoicesSortedByBucket[1]}
           activeChoice={bucket2}
+          isTimerAndGuessesValid={isTimerAndGuessesValid}
         />
         <BucketList
           bucket={randomizedBucket3}
           handleBucketItemClick={(item) => handleBucketItemClick(item, 3)}
           correctChoices={memoizedCorrectChoicesSortedByBucket[2]}
           activeChoice={bucket3}
+          isTimerAndGuessesValid={isTimerAndGuessesValid}
         />
       </div>
     </>

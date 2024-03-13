@@ -48,6 +48,7 @@ export default function QuestionCard() {
           score={score}
           questions={questions}
           currentQuestionIndex={currentQuestionIndex}
+          matchup={matchup}
         />
         <QuestionsList
           questions={questions}

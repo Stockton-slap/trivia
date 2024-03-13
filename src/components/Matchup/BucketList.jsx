@@ -6,6 +6,7 @@ export default function BucketList({
   handleBucketItemClick,
   correctChoices,
   activeChoice,
+  isTimerAndGuessesValid,
 }) {
   return (
     <ul className="border-[1px] rounded-[10px] p-[20px] flex flex-wrap gap-[10px] justify-center flex-1">
@@ -21,6 +22,7 @@ export default function BucketList({
             }}
             isSelected={activeChoice === item}
             isCorrect={isCorrect}
+            isTimerAndGuessesValid={isTimerAndGuessesValid}
           />
         );
       })}

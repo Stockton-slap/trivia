@@ -5,6 +5,7 @@ export default function QuestionHeader({
   score,
   questions,
   currentQuestionIndex,
+  matchup,
 }) {
   return (
     <section className="bg-gradient-header rounded-[10px]">
@@ -22,7 +23,7 @@ export default function QuestionHeader({
               8
             )}`}
           >
-            {score} out of {questions.length}
+            {matchup ? null : `${score} out of ${questions.length}`}
           </h2>
         )}
       </div>

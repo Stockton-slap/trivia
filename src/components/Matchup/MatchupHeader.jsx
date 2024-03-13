@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import evaluateStats from "../../utils/evaluateStats";
 import { MdOutlineReplay } from "react-icons/md";
 
@@ -9,24 +9,21 @@ export default function MatchupHeader({
   setGuesses,
   setCorrectChoices,
   setWrongAnswers,
+  isTimerAndGuessesValid,
+  timer,
+  setTimer,
 }) {
-  const [timer, setTimer] = useState(5); // 300
-  const [gameOver, setGameOver] = useState(false);
-
-  const isTimerAndGuessesValid = timer > 0 && guesses > 0;
-
   useEffect(() => {
     const countdown = setInterval(() => {
       if (isTimerAndGuessesValid) {
         setTimer(timer - 1);
       } else {
-        setGameOver(true);
         clearInterval(countdown);
       }
     }, 1000);
 
     return () => clearInterval(countdown);
-  }, [timer, isTimerAndGuessesValid]);
+  }, [timer, isTimerAndGuessesValid, setTimer]);
 
   const minutes = Math.floor(timer / 60);
   const seconds = timer % 60;
@@ -86,7 +83,6 @@ export default function MatchupHeader({
         }`}</span>
       </div>
       <div className="flex space-x-4"></div>
-      {/* {gameOver && <button onClick={handleReplayClick}>Replay Quiz</button>} */}
     </div>
   );
 }

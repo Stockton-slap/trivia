@@ -5,6 +5,7 @@ export default function BucketItem({
   handleBucketItemClick,
   isSelected,
   isCorrect,
+  isTimerAndGuessesValid,
 }) {
   return (
     <li>
@@ -12,7 +13,9 @@ export default function BucketItem({
         type="button"
         className={`transition-all ease-in-out duration-500 hover:bg-hovered hover:border-hovered px-4 py-2 bg-blue-500 text-white rounded-md border-[1px] ${
           isSelected ? "bg-yellow text-black border-yellow" : ""
-        } ${isCorrect ? "bg-green border-green" : ""}`}
+        } ${isCorrect ? "bg-green border-green" : ""} ${
+          !isTimerAndGuessesValid && "bg-red border-red"
+        }`}
         onClick={handleBucketItemClick}
       >
         {item}
