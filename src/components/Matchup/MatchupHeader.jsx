@@ -1,41 +1,91 @@
 import React, { useEffect, useState } from "react";
+import evaluateStats from "../../utils/evaluateStats";
+import { MdOutlineReplay } from "react-icons/md";
 
 export default function MatchupHeader({
-  matchup,
   guesses,
   correctAnswers,
   wrongAnswers,
+  setGuesses,
+  setCorrectChoices,
+  setWrongAnswers,
 }) {
-  const [score, setScore] = useState(0);
-  const [timer, setTimer] = useState(300);
-  //   const [gameOver, setGameOver] = useState(false);
-  //   const [currentMovieIndex, setCurrentMovieIndex] = useState(0);
+  const [timer, setTimer] = useState(5); // 300
+  const [gameOver, setGameOver] = useState(false);
 
-  //   useEffect(() => {
-  //     const countdown = setInterval(() => {
-  //       if (timer > 0 && guesses > 0) {
-  //         setTimer(timer - 1);
-  //       } else {
-  //         setGameOver(true);
-  //         clearInterval(countdown);
-  //       }
-  //     }, 1000);
+  const isTimerAndGuessesValid = timer > 0 && guesses > 0;
 
-  //     return () => clearInterval(countdown);
-  //   }, [timer, guesses]);
+  useEffect(() => {
+    const countdown = setInterval(() => {
+      if (isTimerAndGuessesValid) {
+        setTimer(timer - 1);
+      } else {
+        setGameOver(true);
+        clearInterval(countdown);
+      }
+    }, 1000);
+
+    return () => clearInterval(countdown);
+  }, [timer, isTimerAndGuessesValid]);
+
+  const minutes = Math.floor(timer / 60);
+  const seconds = timer % 60;
+  const percentage = (correctAnswers / 20) * 100;
 
   return (
-    <div className="flex items-center justify-center gap-10">
-      <div>Guesses remaining: {guesses}</div>
-      <div>Correct: {correctAnswers}</div>
-      <div>Wrong: {wrongAnswers}</div>
-      <div>Score: {score}/15</div>
-      <div>Timer: {timer}s</div>
-      <div className="flex space-x-4">
-        {/* <div>{renderBuckets("bucket1")}</div>
-        <div>{renderBuckets("bucket2")}</div>
-        <div>{renderBuckets("bucket3")}</div> */}
+    <div className="flex justify-center gap-10 bg-yellow py-[20px] rounded-[10px] font-bold">
+      {isTimerAndGuessesValid ? (
+        <>
+          <div className="matchup-text-container">
+            <p>GUESSES REMAINING</p>
+            <span className="text-lg text-orange">{guesses}</span>
+          </div>
+          <div className="matchup-text-container">
+            <p>CORRECT</p>
+            <span className="text-lg">{correctAnswers}</span>
+          </div>
+          <div className="matchup-text-container">
+            <p>WRONG</p>
+            <span className="text-lg">{wrongAnswers}</span>
+          </div>
+        </>
+      ) : (
+        <>
+          <div className="matchup-text-container">
+            <p>YOU GOT</p>
+            <span className={`text-lg ${evaluateStats(percentage, 35, 70)}`}>
+              {percentage}%
+            </span>
+          </div>
+          <div className="matchup-text-container">
+            <button
+              type="button"
+              onClick={() => {
+                setTimer(5); // 300
+                setGuesses(20);
+                setCorrectChoices([]);
+                setWrongAnswers(0);
+              }}
+            >
+              <p>REPLAY</p>
+              <div className="bg-orange rounded-[50%] p-[10px] inline-block mt-[5px] hover:bg-hovered transition-all ease-in-out duration-500 ">
+                <MdOutlineReplay size={25} color="#fff" />
+              </div>
+            </button>
+          </div>
+        </>
+      )}
+      <div className="matchup-text-container">
+        <p>SCORE</p>
+        <span className="text-lg">{correctAnswers}/20</span>
       </div>
+      <div className="matchup-text-container">
+        <p>TIMER</p>
+        <span className={`text-lg ${timer <= 60 && "text-red"}`}>{`${minutes}:${
+          seconds < 10 ? `0${seconds}` : seconds
+        }`}</span>
+      </div>
+      <div className="flex space-x-4"></div>
       {/* {gameOver && <button onClick={handleReplayClick}>Replay Quiz</button>} */}
     </div>
   );

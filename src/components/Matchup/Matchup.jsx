@@ -9,8 +9,9 @@ export default function Matchup({ matchup }) {
   const [bucket2, setBucket2] = useState(null);
   const [bucket3, setBucket3] = useState(null);
   const [correctChoices, setCorrectChoices] = useState([]);
-  const [guesses, setGuesses] = useState(15);
+  const [guesses, setGuesses] = useState(20);
   const [wrongAnswers, setWrongAnswers] = useState(0);
+  const [isStartCliked, setIsStartClicked] = useState(false);
 
   const memoizedAllChoicesSortedByBucket = useSortedChoicesByBucket(
     matchup.matchups
@@ -58,16 +59,18 @@ export default function Matchup({ matchup }) {
     }
   };
 
-  return (
+  return isStartCliked ? (
     <>
       <MatchupHeader
-        matchup={matchup}
         guesses={guesses}
         correctAnswers={correctChoices.length}
         wrongAnswers={wrongAnswers}
+        setGuesses={setGuesses}
+        setCorrectChoices={setCorrectChoices}
+        setWrongAnswers={setWrongAnswers}
       />
 
-      <div className="flex justify-evenly gap-[30px]">
+      <div className="flex justify-evenly gap-[30px] mt-[30px]">
         <BucketList
           bucket={randomizedBucket1}
           handleBucketItemClick={(item) => handleBucketItemClick(item, 1)}
@@ -88,5 +91,17 @@ export default function Matchup({ matchup }) {
         />
       </div>
     </>
+  ) : (
+    <div>
+      <button
+        type="button"
+        className="btn"
+        onClick={() => {
+          setIsStartClicked(true);
+        }}
+      >
+        Start Quiz
+      </button>
+    </div>
   );
 }

@@ -1,17 +1,11 @@
 import React from "react";
+import evaluateStats from "../../utils/evaluateStats";
 
 export default function QuestionHeader({
   score,
   questions,
   currentQuestionIndex,
 }) {
-  const evaluateAnswers =
-    score < 4
-      ? "text-red"
-      : score >= 4 && score < 8
-      ? "text-grey"
-      : "text-green";
-
   return (
     <section className="bg-gradient-header rounded-[10px]">
       <div className="flex-center text-white p-[40px]">
@@ -21,7 +15,13 @@ export default function QuestionHeader({
         </span>
 
         {currentQuestionIndex >= questions.length && (
-          <h2 className={`text-xl font-bold mt-[40px] ${evaluateAnswers}`}>
+          <h2
+            className={`text-xl font-bold mt-[40px] ${evaluateStats(
+              score,
+              4,
+              8
+            )}`}
+          >
             {score} out of {questions.length}
           </h2>
         )}

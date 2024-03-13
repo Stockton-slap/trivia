@@ -8,7 +8,7 @@ export default function BucketList({
   activeChoice,
 }) {
   return (
-    <ul className="border-[1px] rounded-[10px] p-[20px] flex flex-wrap gap-[10px] justify-center">
+    <ul className="border-[1px] rounded-[10px] p-[20px] flex flex-wrap gap-[10px] justify-center flex-1">
       {bucket.map((item, index) => {
         const isCorrect = correctChoices.includes(item);
 

@@ -21,7 +21,7 @@ export default function AnswersItem({
       onClick={onAnswerClick}
     >
       <div
-        className={`p-[16px] w-full bg-white rounded-[10px] border-[1px] group-hover:border-hoverAnswer  transition-all ease-in-out duration-500`}
+        className={`p-[16px] w-full bg-white rounded-[10px] border-[1px] group-hover:border-hovered  transition-all ease-in-out duration-500`}
         style={{
           whiteSpace: "nowrap",
           overflow: "hidden",

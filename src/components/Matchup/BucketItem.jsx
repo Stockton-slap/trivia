@@ -10,7 +10,7 @@ export default function BucketItem({
     <li>
       <button
         type="button"
-        className={`px-4 py-2 bg-blue-500 text-white rounded-md border-[1px] ${
+        className={`transition-all ease-in-out duration-500 hover:bg-hovered hover:border-hovered px-4 py-2 bg-blue-500 text-white rounded-md border-[1px] ${
           isSelected ? "bg-yellow text-black border-yellow" : ""
         } ${isCorrect ? "bg-green border-green" : ""}`}
         onClick={handleBucketItemClick}

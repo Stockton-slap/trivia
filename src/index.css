@@ -12,6 +12,10 @@
   .flex-center {
     @apply flex items-center justify-center flex-col;
   }
+
+  .matchup-text-container {
+    @apply w-[200px] whitespace-nowrap;
+  }
 }
 
 @keyframes leftright {
