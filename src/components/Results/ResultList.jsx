@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import ResultItem from "./ResultItem";
 import { Link } from "react-router-dom";
+import Button from "../common/Button";
 
 export default function ResultList({ questions, userAnswers }) {
   useEffect(() => {
@@ -24,12 +25,11 @@ export default function ResultList({ questions, userAnswers }) {
         </ul>
       </div>
       <Link to="/quiz">
-        <button
+        <Button
+          text="Back to Quiz Selection"
           type="button"
           className="btn text-white bg-blue hover:bg-orange hover:text-blue mt-[32px] duration-300 hover:font-semibold"
-        >
-          Back to Quiz Selection
-        </button>
+        />
       </Link>
     </>
   );

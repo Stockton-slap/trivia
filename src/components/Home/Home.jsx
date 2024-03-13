@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "../common/Button";
 
 export default function Home() {
   const handleClick = () => {
@@ -7,9 +8,12 @@ export default function Home() {
 
   return (
     <div>
-      <button type="button" onClick={handleClick} className="border-[1px]">
-        Go to quiz list
-      </button>
+      <Button
+        text="Go to quiz list"
+        type="button"
+        className="border-[1px]"
+        handleClick={handleClick}
+      />
     </div>
   );
 }

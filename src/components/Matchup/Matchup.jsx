@@ -3,6 +3,7 @@ import BucketList from "./BucketList";
 import MatchupHeader from "./MatchupHeader";
 import useRandomize from "../../hooks/useRandomize";
 import useSortedChoicesByBucket from "../../hooks/useSortedChoicesByBucket";
+import Button from "../common/Button";
 
 export default function Matchup({ matchup }) {
   const [bucket1, setBucket1] = useState(null);
@@ -101,16 +102,13 @@ export default function Matchup({ matchup }) {
       </div>
     </>
   ) : (
-    <div>
-      <button
-        type="button"
-        className="btn"
-        onClick={() => {
-          setIsStartClicked(true);
-        }}
-      >
-        Start Quiz
-      </button>
-    </div>
+    <Button
+      handleClick={() => {
+        setIsStartClicked(true);
+      }}
+      className="btn"
+      text="Start Quiz"
+      type="button"
+    />
   );
 }

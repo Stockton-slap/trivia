@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import getVariantLetters from "../../utils/getVariantLetters";
+import Button from "../common/Button";
 
 export default function AnswersItem({
   onAnswerClick,
@@ -15,6 +16,25 @@ export default function AnswersItem({
 
   const shouldShowFullAnswer = isHovered && answer.length > 20;
 
+  const answerMarkup = (
+    <>
+      <div
+        className={`bg-gradient-btn text-white px-[20px] py-[12px] rounded-[10px] flex items-center justify-center text-sm font-bold duration-500 group-hover:bg-gradient-btn-hover group-hover:scale-90`}
+      >
+        {letter}
+      </div>
+      <div className={`flex items-center gap-[24px] overflow-hidden`}>
+        <p
+          className={`font-semibold text-textColor ${
+            shouldShowFullAnswer && "slide-out"
+          }`}
+        >
+          {isHovered ? answer : truncatedAnswer}
+        </p>
+      </div>
+    </>
+  );
+
   return (
     <li
       className={`btn bg-bg p-[8px] justify-start ${getItemColor} group`}
@@ -29,25 +49,11 @@ export default function AnswersItem({
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        <button
+        <Button
           type="button"
           className={`flex items-center gap-[24px] overflow-hidden w-full`}
-        >
-          <div
-            className={`bg-gradient-btn text-white px-[20px] py-[12px] rounded-[10px] flex items-center justify-center text-sm font-bold duration-500 group-hover:bg-gradient-btn-hover group-hover:scale-90`}
-          >
-            {letter}
-          </div>
-          <div className={`flex items-center gap-[24px] overflow-hidden`}>
-            <p
-              className={`font-semibold text-textColor ${
-                shouldShowFullAnswer && "slide-out"
-              }`}
-            >
-              {isHovered ? answer : truncatedAnswer}
-            </p>
-          </div>
-        </button>
+          text={answerMarkup}
+        />
       </div>
     </li>
   );

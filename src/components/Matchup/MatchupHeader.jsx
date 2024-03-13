@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import evaluateStats from "../../utils/evaluateStats";
 import { MdOutlineReplay } from "react-icons/md";
+import Button from "../common/Button";
 
 export default function MatchupHeader({
   guesses,
@@ -29,6 +30,13 @@ export default function MatchupHeader({
   const seconds = timer % 60;
   const percentage = (correctAnswers / 20) * 100;
 
+  const handleReplayClick = () => {
+    setTimer(5); // 300
+    setGuesses(20);
+    setCorrectChoices([]);
+    setWrongAnswers(0);
+  };
+
   return (
     <div className="flex justify-center gap-10 bg-yellow py-[20px] rounded-[10px] font-bold">
       {isTimerAndGuessesValid ? (
@@ -54,21 +62,14 @@ export default function MatchupHeader({
               {percentage}%
             </span>
           </div>
-          <div className="matchup-text-container">
-            <button
+          <div className="matchup-text-container flex-center">
+            <p>REPLAY</p>
+            <Button
+              handleClick={handleReplayClick}
               type="button"
-              onClick={() => {
-                setTimer(5); // 300
-                setGuesses(20);
-                setCorrectChoices([]);
-                setWrongAnswers(0);
-              }}
-            >
-              <p>REPLAY</p>
-              <div className="bg-orange rounded-[50%] p-[10px] inline-block mt-[5px] hover:bg-hovered transition-all ease-in-out duration-500 ">
-                <MdOutlineReplay size={25} color="#fff" />
-              </div>
-            </button>
+              text={<MdOutlineReplay size={20} color="#fff" />}
+              className="bg-orange rounded-[50%] p-[10px] inline-block mt-[5px] hover:bg-hovered transition-all ease-in-out duration-500"
+            />
           </div>
         </>
       )}

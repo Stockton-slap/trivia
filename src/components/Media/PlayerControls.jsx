@@ -4,6 +4,7 @@ import { CiPlay1, CiPause1 } from "react-icons/ci";
 import { VscMute, VscUnmute } from "react-icons/vsc";
 import { ImLoop } from "react-icons/im";
 import Durations from "./Durations";
+import Button from "../common/Button";
 
 export default function PlayerControls({
   playerRef,
@@ -89,33 +90,33 @@ export default function PlayerControls({
 
       <div className="grid grid-cols-3 items-center ">
         <div className="flex justify-center">
-          <button
+          <Button
+            handleClick={toggleLoop}
             className={`focus:outline focus:outline-cyan-500 font-bold hover:bg-gray-200 ${
               loop && "text-cyan-500"
             }`}
-            onClick={toggleLoop}
-          >
-            <ImLoop />
-          </button>
+            text={<ImLoop />}
+            type="button"
+          />
         </div>
 
         <div className="flex justify-center">
-          <button
-            ref={playPauseButtonRef}
+          <Button
+            handleClick={togglePlayAndPause}
             className="focus:outline focus:outline-cyan-500 border border-cyan-500 rounded-md p-4 hover:bg-gray-200"
-            onClick={togglePlayAndPause}
-          >
-            {playing ? <CiPause1 /> : <CiPlay1 />}
-          </button>
+            text={playing ? <CiPause1 /> : <CiPlay1 />}
+            type="button"
+            ref={playPauseButtonRef}
+          />
         </div>
 
         <div className="flex justify-center items-center gap-1">
-          <button
+          <Button
+            handleClick={toggleMute}
             className="focus:outline focus:outline-cyan-500"
-            onClick={toggleMute}
-          >
-            {muted ? <VscMute /> : <VscUnmute />}
-          </button>
+            text={muted ? <VscMute /> : <VscUnmute />}
+            type="button"
+          />
 
           <input
             type="range"

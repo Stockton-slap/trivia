@@ -3,6 +3,7 @@ import { ToastContainer } from "react-toastify";
 import QuestionHeadline from "../QuestionHeadline/QuestionHeadline";
 import "react-toastify/dist/ReactToastify.css";
 import notifyToast from "../../../utils/notifyToast";
+import Button from "../../common/Button";
 
 export default function QuestionsInputItem({
   currentQuestion,
@@ -75,14 +76,13 @@ export default function QuestionsInputItem({
           onChange={handleAnswerChange}
           className="border rounded-[10px] py-2 px-4 focus:border-blue-500 focus:outline-none focus:ring focus:ring-blue-300 hover:bg-blue-500 hover:border-orange hover:text-blue duration-300"
         />
-        <button
+        <Button
           type="submit"
+          text="Submit"
           className={`btn bg-blue hover:bg-orange hover:text-blue mt-[32px] duration-300 hover:font-semibold ${
             isClickDisabled && "opacity-[0.7]"
           }`}
-        >
-          Submit
-        </button>
+        />
       </form>
       <ToastContainer />
     </li>

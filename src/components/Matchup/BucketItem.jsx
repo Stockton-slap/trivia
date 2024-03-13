@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "../common/Button";
 
 export default function BucketItem({
   item,
@@ -9,17 +10,16 @@ export default function BucketItem({
 }) {
   return (
     <li>
-      <button
+      <Button
+        text={item}
         type="button"
+        handleClick={handleBucketItemClick}
         className={`transition-all ease-in-out duration-500 hover:bg-hovered hover:border-hovered px-4 py-2 bg-blue-500 text-white rounded-md border-[1px] ${
           isSelected ? "bg-yellow text-black border-yellow" : ""
         } ${isCorrect ? "bg-green border-green" : ""} ${
           !isTimerAndGuessesValid && "bg-red border-red"
         }`}
-        onClick={handleBucketItemClick}
-      >
-        {item}
-      </button>
+      />
     </li>
   );
 }
